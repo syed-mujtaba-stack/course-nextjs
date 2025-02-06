@@ -2,36 +2,23 @@ import path from "path";
 import { promises as fs } from "fs";
 import { fileURLToPath } from "url";
 import { execa } from "execa";
+import { deps } from "./thingsToUpdate.js";
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
 const lessonsRootDir = path.join(__dirname, "../../../lessons");
 
-/** Paste from 00_example */
-const deps = {
-  dependencies: {
-    react: "^19",
-    "react-dom": "^19",
-    next: "15.1.6",
-  },
-  devDependencies: {
-    typescript: "^5",
-    "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    eslint: "^9",
-    "eslint-config-next": "15.1.6",
-    "@eslint/eslintrc": "^3",
-  },
-};
-
-async function main() {
+async function getLessonDirectories() {
   const lessonDirectories = (
     await fs.readdir(lessonsRootDir, { withFileTypes: true })
   )
     .filter((dir) => dir.isDirectory())
     .map((dir) => dir.name);
+  return lessonDirectories;
+}
 
+async function main() {
+  const lessonDirectories = await getLessonDirectories();
   console.log(lessonDirectories);
 
   for (const lessonDir of lessonDirectories) {
