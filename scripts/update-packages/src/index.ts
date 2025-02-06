@@ -19,8 +19,9 @@ const deps = {
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    eslint: "9.19.0",
+    eslint: "^9",
     "eslint-config-next": "15.1.6",
+    "@eslint/eslintrc": "^3",
   },
 };
 
@@ -33,19 +34,39 @@ async function main() {
 
   console.log(lessonDirectories);
 
-  const depsCommand = Object.entries(deps.dependencies)
-    .map(([name, version]) => `${name}@${version}`)
-    .join(" ");
-  
-  console.log(depsCommand);
-  
-
   for (const lessonDir of lessonDirectories) {
     const lessonDirPath = path.join(lessonsRootDir, lessonDir);
+
     try {
       console.log(`Updating ${lessonDir}...`);
 
-      await execa("npm", ["install", "-SE", depsCommand], {
+      /**
+       * We update the package.json file manually to ensure that things like `^` are preserved
+       */
+      const lessonPackageJsonPath = path.join(lessonDirPath, "package.json");
+      const lessonPackage = JSON.parse(
+        await fs.readFile(lessonPackageJsonPath, "utf-8")
+      );
+      const newlessonPackage = {
+        ...lessonPackage,
+        dependencies: {
+          ...lessonPackage.dependencies,
+          ...deps.dependencies,
+        },
+        devDependencies: {
+          ...lessonPackage.devDependencies,
+          ...deps.devDependencies,
+        },
+      };
+      await fs.writeFile(
+        lessonPackageJsonPath,
+        JSON.stringify(newlessonPackage, null, 2) + "\n"
+      );
+
+      /**
+       * Install the packages
+       */
+      await execa("npm", ["install"], {
         cwd: lessonDirPath,
         stdio: "inherit",
       });
