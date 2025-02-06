@@ -1,16 +1,18 @@
 {
-  "name": "course-react",
+  "name": "course-nextjs",
   "version": "1.0.0",
   "private": true,
-  "description": "React Course for BooleanArt",
+  "description": "NextJS Course for BooleanArt",
   "scripts": {
+    "update-packages": "node scripts/update-packages"
   },
   "workspaces": [
-    "lessons/*"
+    "lessons/*",
+    "scripts"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/basarat/course-react.git"
+    "url": "https://github.com/basarat/course-nextjs.git"
   },
   "license": "CC-BY-4.0"
 }

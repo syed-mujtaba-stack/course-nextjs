@@ -1,0 +1,13 @@
+{
+  "name": "update-packages",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "private": true,
+  "scripts": {},
+  "keywords": [],
+  "author": "bas@basarat.com",
+  "license": "CC-BY-4.0",
+  "dependencies": {
+    "typescript": "5.8.0-beta"
+  }
+}
