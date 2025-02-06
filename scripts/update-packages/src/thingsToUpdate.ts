@@ -1,4 +1,7 @@
-/** Paste from 00_example */
+/** 
+ * Paste from 
+ * ../../lessons/00_example/package.json
+ * */
 export const deps = {
   dependencies: {
     react: "^19",

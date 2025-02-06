@@ -1,12 +1,8 @@
 import path from "path";
 import { promises as fs } from "fs";
-import { fileURLToPath } from "url";
 import { execa } from "execa";
 import { deps } from "./thingsToUpdate.ts";
-
-const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
-const __dirname = path.dirname(__filename); // get the name of the directory
-const lessonsRootDir = path.join(__dirname, "../../../lessons");
+import { lessonsRootDir } from "./lessonsRootDir.ts";
 
 async function getLessonDirectories() {
   const lessonDirectories = (
@@ -61,6 +57,27 @@ ${lessonDir}: Updating Packages...
     cwd: lessonDirPath,
     stdio: "inherit",
   });
+  console.log("✅ ");
+}
+
+async function updateTsconfigJson(lessonDir: string) {
+  console.log(
+    `
+------------------------------
+${lessonDir}: Updating tsconfig.json...
+------------------------------
+    `.trim()
+  );
+
+  const example_00_tsconfig = path.join(
+    lessonsRootDir,
+    "00_example",
+    "tsconfig.json"
+  );
+  const lessonDirPath = getLesssonDirPath(lessonDir);
+  const tsconfig = await fs.readFile(example_00_tsconfig, "utf-8");
+  await fs.writeFile(path.join(lessonDirPath, "tsconfig.json"), tsconfig);
+  console.log("✅ ");
 }
 
 async function main() {
@@ -68,6 +85,7 @@ async function main() {
   console.log(lessonDirectories);
 
   for (const lessonDir of lessonDirectories) {
+    await updateTsconfigJson(lessonDir);
     await updatePackageJson(lessonDir);
 
     try {
