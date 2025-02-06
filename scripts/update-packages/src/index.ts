@@ -33,14 +33,19 @@ async function main() {
 
   console.log(lessonDirectories);
 
-  const depsCommand = Object.entries(deps.dependencies).map(([name, version]) => `${name}@${version}`).join(" ");
+  const depsCommand = Object.entries(deps.dependencies)
+    .map(([name, version]) => `${name}@${version}`)
+    .join(" ");
   
+  console.log(depsCommand);
+  
+
   for (const lessonDir of lessonDirectories) {
     const lessonDirPath = path.join(lessonsRootDir, lessonDir);
     try {
       console.log(`Updating ${lessonDir}...`);
 
-      await execa("npm", ["install", depsCommand], {
+      await execa("npm", ["install", "-SE", depsCommand], {
         cwd: lessonDirPath,
         stdio: "inherit",
       });
