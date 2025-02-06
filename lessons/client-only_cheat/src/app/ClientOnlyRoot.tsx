@@ -1,5 +1,10 @@
-'use client';
+"use client";
 
-import { ClientOnly } from './ClientOnly';
+import dynamic from "next/dynamic";
 
-export default ClientOnly;
+export const ClientOnlyRoot = dynamic(
+  () => import("./ClientOnly").then((module) => module.ClientOnly),
+  {
+    ssr: false,
+  }
+);

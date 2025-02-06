@@ -1,10 +1,4 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const ClientOnlyRoot = dynamic(() => import("./ClientOnlyRoot"), {
-  ssr: false,
-});
+import { ClientOnlyRoot } from './ClientOnlyRoot';
 
 export default function Home() {
   return (
