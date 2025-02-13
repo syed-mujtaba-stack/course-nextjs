@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div>
-      <a href="/alpha">Go to Alpha</a>
-      <a href="/beta">Go to Beta</a>
+      <Link href="/alpha">Go to Alpha</Link>
+      <Link href="/beta">Go to Beta</Link>
     </div>
   );
 }

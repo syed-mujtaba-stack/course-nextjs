@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export default function Alpha() {
   return (
     <div>
-      <a href="/beta">Go to Beta</a>
+      <Link href="/beta">Go to Beta</Link>
     </div>
   );
 }
