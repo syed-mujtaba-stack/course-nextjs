@@ -9,6 +9,7 @@ async function getLessonDirectories() {
     await fs.readdir(lessonsRootDir, { withFileTypes: true })
   )
     .filter((dir) => dir.isDirectory())
+    .filter((dir) => dir.name !== "00_example")
     .map((dir) => dir.name);
   return lessonDirectories;
 }
