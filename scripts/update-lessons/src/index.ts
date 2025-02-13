@@ -1,8 +1,7 @@
 import path from "path";
 import { promises as fs } from "fs";
-import { execa } from "execa";
-import { deps } from "./thingsToUpdate.ts";
 import { lessonsRootDir } from "./utils/lessonsRootDir.ts";
+import { updatePackageJson } from './utils/updatePackageJson.ts';
 
 async function getLessonDirectories() {
   const lessonDirectories = (
@@ -13,51 +12,8 @@ async function getLessonDirectories() {
   return lessonDirectories;
 }
 
-function getLesssonDirPath(lessonDir: string) {
+export function getLesssonDirPath(lessonDir: string) {
   return path.join(lessonsRootDir, lessonDir);
-}
-
-async function updatePackageJson(lessonDir: string) {
-  console.log(
-    `
-------------------------------
-${lessonDir}: Updating Packages...
-------------------------------
-    `.trim()
-  );
-  const lessonDirPath = getLesssonDirPath(lessonDir);
-
-  /**
-   * We update the package.json file manually to ensure that things like `^` are preserved
-   */
-  const lessonPackageJsonPath = path.join(lessonDirPath, "package.json");
-  const lessonPackage = JSON.parse(
-    await fs.readFile(lessonPackageJsonPath, "utf-8")
-  );
-  const newlessonPackage = {
-    ...lessonPackage,
-    dependencies: {
-      ...lessonPackage.dependencies,
-      ...deps.dependencies,
-    },
-    devDependencies: {
-      ...lessonPackage.devDependencies,
-      ...deps.devDependencies,
-    },
-  };
-  await fs.writeFile(
-    lessonPackageJsonPath,
-    JSON.stringify(newlessonPackage, null, 2) + "\n"
-  );
-
-  /**
-   * Install the packages
-   */
-  await execa("npm", ["install"], {
-    cwd: lessonDirPath,
-    stdio: "inherit",
-  });
-  console.log("✅ ");
 }
 
 async function updateTsconfigJson(lessonDir: string) {

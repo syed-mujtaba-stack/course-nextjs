@@ -4,7 +4,7 @@
   "private": true,
   "description": "NextJS Course for BooleanArt",
   "scripts": {
-    "update-packages": "node scripts/update-packages"
+    "update-lessons": "node scripts/update-lessons"
   },
   "workspaces": [
     "lessons/*",
