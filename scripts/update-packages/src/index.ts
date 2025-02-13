@@ -2,7 +2,7 @@ import path from "path";
 import { promises as fs } from "fs";
 import { execa } from "execa";
 import { deps } from "./thingsToUpdate.ts";
-import { lessonsRootDir } from "./lessonsRootDir.ts";
+import { lessonsRootDir } from "./utils/lessonsRootDir.ts";
 
 async function getLessonDirectories() {
   const lessonDirectories = (
