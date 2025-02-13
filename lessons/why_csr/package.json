@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19",
-    "react-dom": "^19",
-    "next": "15.1.6"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.1.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -26,8 +26,8 @@
     "typescript": "^5",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
-    "@types/node": "^22",
-    "eslint-config-next": "15.1.6",
+    "@types/node": "^20",
+    "eslint-config-next": "15.1.7",
     "@eslint/eslintrc": "^3"
   }
 }

@@ -1,20 +1,20 @@
-/** 
- * Paste from 
+/**
+ * Paste from
  * ../../lessons/00_example/package.json
  * */
 export const deps = {
   dependencies: {
-    react: "^19",
-    "react-dom": "^19",
-    next: "15.1.6",
+    react: "^19.0.0",
+    "react-dom": "^19.0.0",
+    next: "15.1.7",
   },
   devDependencies: {
     typescript: "^5",
-    "@types/node": "^22",
+    "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     eslint: "^9",
-    "eslint-config-next": "15.1.6",
+    "eslint-config-next": "15.1.7",
     "@eslint/eslintrc": "^3",
   },
 };
