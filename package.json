@@ -7,8 +7,7 @@
     "update-lessons": "node scripts/update-lessons"
   },
   "workspaces": [
-    "lessons/*",
-    "scripts"
+    "lessons/*"
   ],
   "repository": {
     "type": "git",

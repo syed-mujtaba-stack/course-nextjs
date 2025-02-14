@@ -1,10 +1,10 @@
 import path from "path";
 import { promises as fs } from "fs";
 import { lessonsRootDir } from "./utils/lessonsRootDir.ts";
-import { updatePackageJson } from './utils/updatePackageJson.ts';
-import { updateTsconfigJson } from './utils/updateTsconfigJson.ts';
-import { cleanModulesRoot } from './utils/cleanModules.ts';
-import { npmInstall } from './utils/npmInstall.ts';
+import { updatePackageJson } from "./utils/updatePackageJson.ts";
+import { updateTsconfigJson } from "./utils/updateTsconfigJson.ts";
+import { cleanModulesLesson, cleanModulesRoot } from "./utils/cleanModules.ts";
+import { npmInstall } from "./utils/npmInstall.ts";
 
 async function getLessonDirectories() {
   const lessonDirectories = (
@@ -29,6 +29,7 @@ async function main() {
   for (const lessonDir of lessonDirectories) {
     await updateTsconfigJson(lessonDir);
     await updatePackageJson(lessonDir);
+    await cleanModulesLesson(lessonDir);
 
     try {
     } catch (error) {
