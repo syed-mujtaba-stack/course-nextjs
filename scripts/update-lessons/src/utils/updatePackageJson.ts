@@ -1,4 +1,3 @@
-import { execa } from 'execa';
 import { promises as fs } from "fs";
 import path from 'path';
 import { getLesssonDirPath } from '../index.ts';
@@ -32,12 +31,5 @@ export async function updatePackageJson(lessonDir: string) {
     JSON.stringify(newlessonPackage, null, 2) + "\n"
   );
 
-  /**
-   * Install the packages
-   */
-  await execa("npm", ["install"], {
-    cwd: lessonDirPath,
-    stdio: "inherit",
-  });
   logDone();
 }

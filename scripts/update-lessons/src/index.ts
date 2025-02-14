@@ -4,6 +4,7 @@ import { lessonsRootDir } from "./utils/lessonsRootDir.ts";
 import { updatePackageJson } from './utils/updatePackageJson.ts';
 import { updateTsconfigJson } from './utils/updateTsconfigJson.ts';
 import { cleanModulesRoot } from './utils/cleanModules.ts';
+import { npmInstall } from './utils/npmInstall.ts';
 
 async function getLessonDirectories() {
   const lessonDirectories = (
@@ -34,6 +35,8 @@ async function main() {
       console.error(`Failed to update ${lessonDir}: ${error}`);
     }
   }
+
+  await npmInstall();
 }
 
 main();
