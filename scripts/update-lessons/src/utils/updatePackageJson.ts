@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 import path from 'path';
 import { getLesssonDirPath } from '../index.ts';
 import { deps } from '../thingsToUpdate.ts';
-import { logSection } from './logSection.ts';
+import { logDone, logSection } from './logSection.ts';
 
 export async function updatePackageJson(lessonDir: string) {
   logSection(`${lessonDir}: Updating Packages`);
@@ -39,5 +39,5 @@ export async function updatePackageJson(lessonDir: string) {
     cwd: lessonDirPath,
     stdio: "inherit",
   });
-  console.log("✅ ");
+  logDone();
 }

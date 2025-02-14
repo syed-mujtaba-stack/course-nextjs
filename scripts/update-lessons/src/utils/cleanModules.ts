@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import { rootDir } from "./lessonsRootDir.ts";
 import path from "path";
-import { logSection } from "./logSection.ts";
+import { logDone, logSection } from "./logSection.ts";
 
 export async function cleanModulesRoot() {
   logSection("Cleaning root node_modules");
@@ -17,4 +17,5 @@ export async function cleanModulesRoot() {
       throw error;
     }
   }
+  logDone();
 }

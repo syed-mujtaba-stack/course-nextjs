@@ -7,3 +7,7 @@ ${message}...
     `.trim()
   );
 }
+
+export function logDone() {
+  console.log("✅");
+}
