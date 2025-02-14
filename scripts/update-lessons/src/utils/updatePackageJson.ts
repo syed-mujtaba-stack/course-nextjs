@@ -3,15 +3,10 @@ import { promises as fs } from "fs";
 import path from 'path';
 import { getLesssonDirPath } from '../index.ts';
 import { deps } from '../thingsToUpdate.ts';
+import { logSection } from './logSection.ts';
 
 export async function updatePackageJson(lessonDir: string) {
-  console.log(
-    `
-------------------------------
-${lessonDir}: Updating Packages...
-------------------------------
-    `.trim()
-  );
+  logSection(`${lessonDir}: Updating Packages`);
   const lessonDirPath = getLesssonDirPath(lessonDir);
 
   /**

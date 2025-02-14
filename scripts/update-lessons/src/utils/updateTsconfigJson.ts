@@ -1,18 +1,11 @@
 import { promises as fs } from "fs";
-import path from 'path';
-import { getLesssonDirPath } from '../index.ts';
-import { lessonsRootDir } from './lessonsRootDir.ts';
-
+import path from "path";
+import { getLesssonDirPath } from "../index.ts";
+import { lessonsRootDir } from "./lessonsRootDir.ts";
+import { logSection } from "./logSection.ts";
 
 export async function updateTsconfigJson(lessonDir: string) {
-  console.log(
-    `
-------------------------------
-${lessonDir}: Updating tsconfig.json...
-------------------------------
-    `.trim()
-  );
-
+  logSection(`${lessonDir}: Updating tsconfig.json`);
   const example_00_tsconfig = path.join(
     lessonsRootDir,
     "00_example",
