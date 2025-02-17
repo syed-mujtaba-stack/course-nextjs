@@ -1,3 +1,8 @@
-export default async function Page(input: { params: { id: string } }) {
-  return <div>Example: {input.params.id}</div>;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  return <div>Example: {id}</div>;
 }
