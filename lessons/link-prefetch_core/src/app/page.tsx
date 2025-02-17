@@ -1,9 +1,14 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 
 export default function Home() {
-  return [...Array(500)].map((_, i) => (
-    <div key={i}>
-      <Link href={`/example/${i + 1}`}>Example {i + 1}</Link>
+  console.log("Home");
+
+  return (
+    <div>
+      <Link href="/alpha">Go to Alpha</Link>
+      <Link href="/beta">Go to Beta</Link>
     </div>
-  ));
+  );
 }
