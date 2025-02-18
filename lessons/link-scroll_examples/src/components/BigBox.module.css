@@ -5,8 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  background-color: #f0f0f0;
+  font-size: 3rem;
+  background-color: #16b3fc;
+  color: white;
   margin: 20px;
   border-radius: 5px;
   user-select: none;
