@@ -1,12 +1,9 @@
 .root {
-  font-family: monospace;
-
   height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  background-color: #16b3fc;
   color: white;
   margin: 20px;
   border-radius: 5px;

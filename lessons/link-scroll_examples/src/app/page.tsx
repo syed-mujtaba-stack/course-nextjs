@@ -1,12 +1,10 @@
-import { BigBox } from '@/components/BigBox';
+import Link from "next/link";
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
-      {[...Array(10)].map((_, i) => (
-        <BigBox key={i} value={i} />
-      ))}
+      <Link href="/alpha">Alpha</Link>
+      <Link href="/beta">Beta</Link>
     </div>
   );
 }
-
