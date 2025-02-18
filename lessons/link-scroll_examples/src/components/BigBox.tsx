@@ -1,3 +1,5 @@
+"use client";
+import { useRef } from "react";
 import styles from "./BigBox.module.css";
 
 export const BigBox = ({
@@ -6,8 +8,20 @@ export const BigBox = ({
 }: {
   value: number;
   backgroundColor: string;
-}) => (
-  <div className={styles.root} style={{ backgroundColor }}>
-    {value}
-  </div>
-);
+}) => {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const scrollMe = () => {
+    rootRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div
+      ref={rootRef}
+      onClick={scrollMe}
+      className={styles.root}
+      style={{ backgroundColor }}
+    >
+      {value}
+    </div>
+  );
+};
