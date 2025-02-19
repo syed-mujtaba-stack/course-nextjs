@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <div>
       Oh no! Something went wrong 😱
-      <Link href="/">Go back to the homepage</Link>
+      <Link href="/" replace>Go back to the homepage</Link>
     </div>
   );
 }
