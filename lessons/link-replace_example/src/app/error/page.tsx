@@ -17,5 +17,5 @@ export default function Page() {
 
 function sendToErrorMonitoring() {
   /** Example */
-  console.log("Error Logged");
+  console.log("Error Logged for Monitoring 🚨");
 }
