@@ -36,7 +36,9 @@ export async function updateConfigFiles(lessonDir: string) {
   // Copy “eslint.config.mjs” to “eslint.config.mjs”
   const eslintConfigSource = path.join(example_00, "eslint.config.mjs");
   const eslintConfigDestination = path.join(lessonDirPath, "eslint.config.mjs");
-  await fs.copyFile(eslintConfigSource, eslintConfigDestination);
+  if (!(await fileExists(eslintConfigDestination))) {
+    await fs.copyFile(eslintConfigSource, eslintConfigDestination);
+  }
 
   // Copy “next.config.ts” to “next.config.ts”
   const nextConfigSource = path.join(example_00, "next.config.ts");
