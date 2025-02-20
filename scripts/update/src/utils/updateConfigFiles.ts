@@ -12,6 +12,15 @@ async function removeFileIfExists(filePath: string) {
   }
 }
 
+async function fileExists(filePath: string) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch (err: any) {
+    return false;
+  }
+}
+
 export async function updateConfigFiles(lessonDir: string) {
   logSection(`${lessonDir}: Updating Config Files`);
   const lessonDirPath = getLesssonDirPath(lessonDir);
@@ -32,7 +41,9 @@ export async function updateConfigFiles(lessonDir: string) {
   // Copy “next.config.ts” to “next.config.ts”
   const nextConfigSource = path.join(example_00, "next.config.ts");
   const nextConfigDestination = path.join(lessonDirPath, "next.config.ts");
-  await fs.copyFile(nextConfigSource, nextConfigDestination);
+  if (!(await fileExists(nextConfigDestination))) {
+    await fs.copyFile(nextConfigSource, nextConfigDestination);
+  }
 
   logDone();
 }
