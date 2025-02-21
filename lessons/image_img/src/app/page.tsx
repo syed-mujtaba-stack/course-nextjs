@@ -8,7 +8,7 @@ const responsiveImage = {
 export default function Page() {
   return (
     <div>
-      <img style={responsiveImage} alt="cat" src="/images/cat.png" />
+      <img style={responsiveImage} alt="dog" src="/images/dog.png" />
     </div>
   );
 }
