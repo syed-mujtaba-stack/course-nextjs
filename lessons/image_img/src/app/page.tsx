@@ -3,7 +3,7 @@
 export default function Page() {
   return (
     <div>
-      <img alt="dog" src="/images/dog.png" />
+      <img alt="dog" src="/images/dog.png" width={500} />
     </div>
   );
 }
