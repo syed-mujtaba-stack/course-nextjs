@@ -2,3 +2,9 @@ body {
   padding: 0px;
   margin: 0px;
 }
+
+/* Responsive Image */
+img {
+  max-width: 100%;
+  height: auto;
+}
