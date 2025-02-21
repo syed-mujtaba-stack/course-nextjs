@@ -1,6 +1,14 @@
 body {
   padding: 0px;
   margin: 0px;
+
+  font-family: monospace;
+  font-size: 3rem;
+}
+
+a {
+  display: block;
+  margin-top: 25px;
 }
 
 /* Responsive Image */
