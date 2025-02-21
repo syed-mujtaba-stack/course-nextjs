@@ -1,5 +1,5 @@
 import Image from "next/image";
-import dog from "../../public/images/dog.png";
+import dog from "../../../public/images/dog.png";
 
 export default function Page() {
   return (
