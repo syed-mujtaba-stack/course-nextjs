@@ -8,6 +8,7 @@ export default function Page() {
         <Example url="/basic" />
         <Example url="/fill" />
         <Example url="/object-fit" />
+        <Example url="/remote" />
       </ul>
     </div>
   );
