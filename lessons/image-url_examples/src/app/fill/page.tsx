@@ -4,6 +4,7 @@ export default function Page() {
   return (
     <div style={{ position: "relative", width: 480, height: 480 }}>
       <Image fill alt="dog" src="/images/dog.png" />
+      <div>Image of a dog</div>
     </div>
   );
 }
