@@ -18,7 +18,7 @@ export default function Page() {
           src="/images/dog.png"
         />
       </div>
-      <div>Image of a dog</div>
+      <div>Nice Doggy</div>
     </Column>
   );
 }

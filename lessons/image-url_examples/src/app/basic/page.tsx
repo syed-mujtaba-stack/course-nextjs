@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <div>
       <Image alt="dog" src="/images/dog.png" width={960} height={960} />
-      <div>Image of a dog</div>
+      <div>Nice Doggy</div>
     </div>
   );
 }
