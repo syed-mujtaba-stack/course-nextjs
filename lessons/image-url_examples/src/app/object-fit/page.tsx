@@ -7,13 +7,13 @@ export default function Page() {
         style={{
           position: "relative",
           background: "gray",
-          width: 480,
+          width: 240,
           height: 480,
         }}
       >
         <Image
           fill
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "cover" }}
           alt="dog"
           src="/images/dog.png"
         />
