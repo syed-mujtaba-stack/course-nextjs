@@ -5,8 +5,8 @@ export default function Page() {
     <Column>
       <div
         style={{
+          background: "lightgray",
           position: "relative",
-          background: "gray",
           width: 240,
           height: 480,
         }}
