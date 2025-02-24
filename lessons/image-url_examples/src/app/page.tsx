@@ -5,16 +5,18 @@ export default function Page() {
     <div>
       <div>Pick a NextJS `Image` example</div>
       <ul>
-        <Example url="/basic" title="Basic" />
+        <Example url="/basic" />
+        <Example url="/fill" />
+        <Example url="/object-fit" />
       </ul>
     </div>
   );
 }
 
-const Example = ({ url, title }: { url: string; title: string }) => {
+const Example = ({ url }: { url: string }) => {
   return (
     <li>
-      <Link href={url}>{title}</Link>
+      <Link href={url}>{url}</Link>
     </li>
   );
 };
