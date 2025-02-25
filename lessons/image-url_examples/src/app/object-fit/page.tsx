@@ -7,8 +7,8 @@ export default function Page() {
         style={{
           background: "lightgray",
           position: "relative",
-          width: 240,
-          height: 480,
+          width: 480,
+          height: 240,
         }}
       >
         <Image
