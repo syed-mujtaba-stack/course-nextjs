@@ -1,9 +1,9 @@
-import { Nav } from "./_ui/Nav";
+import { Name } from "./_ui/Name";
 
 export default function Page() {
   return (
     <div>
-      <Nav />
+      <Name />
       Nice to meet you! 🌹
     </div>
   );
