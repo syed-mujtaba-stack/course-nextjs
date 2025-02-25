@@ -1,9 +1,9 @@
-import { Nav } from "./Nav";
+import { Name } from "./Name";
 
 export default function Page() {
   return (
     <div>
-      <Nav />
+      <Name />
       Nice to meet you! 🌹
     </div>
   );
