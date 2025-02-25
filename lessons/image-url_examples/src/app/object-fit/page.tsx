@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Column } from "./Column";
 
 export default function Page() {
   return (
@@ -22,18 +23,3 @@ export default function Page() {
     </Column>
   );
 }
-
-const Column = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: 16,
-      }}
-    >
-      {children}
-    </div>
-  );
-};
