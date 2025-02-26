@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div>
-      Hello Fam!
+      Home Sweet Home 🏡
     </div>
   );
 }
