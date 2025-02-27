@@ -1,9 +1,3 @@
-export async function GET() {
-  return Response.json({
-    method: "GET",
-  });
-}
-
 export async function POST() {
   return Response.json({
     method: "POST",
@@ -28,9 +22,21 @@ export async function DELETE() {
   });
 }
 
-
 export async function OPTIONS() {
   return Response.json({
     method: "OPTIONS",
   });
+}
+
+export async function GET() {
+  return Response.json(
+    {
+      method: "GET",
+    },
+    {
+      headers: {
+        method: "GET",
+      },
+    }
+  );
 }
