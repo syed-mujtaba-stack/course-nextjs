@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+const Example = ({ url }: { url: string }) => {
+  return (
+    <li>
+      <Link href={url}>{url}</Link>
+    </li>
+  );
+};
+
 export default function Page() {
   return (
     <div>
@@ -14,11 +22,3 @@ export default function Page() {
     </div>
   );
 }
-
-const Example = ({ url }: { url: string }) => {
-  return (
-    <li>
-      <Link href={url}>{url}</Link>
-    </li>
-  );
-};
