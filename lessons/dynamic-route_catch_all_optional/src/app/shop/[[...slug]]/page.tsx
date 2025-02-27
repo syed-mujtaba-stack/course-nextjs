@@ -4,7 +4,6 @@ export default async function Page({
   params: Promise<{ slug: undefined | string[] }>;
 }) {
   const { slug } = await params;
-
   console.log("slug:", slug);
 
   if (slug == null) {
