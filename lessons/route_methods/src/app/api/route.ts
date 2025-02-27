@@ -1,18 +1,24 @@
-export async function POST() {
+export async function POST(req: Request) {
+  const json = await req.json();
   return Response.json({
     method: "POST",
+    request: json,
   });
 }
 
-export async function PUT() {
+export async function PUT(req: Request) {
+  const json = await req.json();
   return Response.json({
     method: "PUT",
+    request: json,
   });
 }
 
-export async function PATCH() {
+export async function PATCH(req: Request) {
+  const json = await req.json();
   return Response.json({
     method: "PATCH",
+    request: json,
   });
 }
 
