@@ -1,0 +1,12 @@
+body {
+  padding: 10px;
+  margin: 0px;
+
+  font-family: monospace;
+  font-size: 2rem;
+}
+
+a {
+  display: block;
+  margin-top: 25px;
+}
