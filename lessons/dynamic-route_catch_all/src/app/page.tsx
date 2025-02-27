@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Example } from "@/utils/Example";
 
 export default function Page() {
   return (
@@ -12,11 +12,3 @@ export default function Page() {
     </div>
   );
 }
-
-const Example = ({ url }: { url: string }) => {
-  return (
-    <li>
-      <Link href={url}>{url}</Link>
-    </li>
-  );
-};
