@@ -7,7 +7,7 @@ export default function Page() {
       <ul>
         <Example url="/shop/clothes" />
         <Example url="/shop/clothes/tops" />
-        <Example url="/shop/clothes/tops/t-shirt" />
+        <Example url="/shop/clothes/tops/t-shirts" />
       </ul>
     </div>
   );
