@@ -1,4 +1,4 @@
-import { Example } from "@/components/Example";
+import { Example } from "@/utils/Example";
 
 export default function Page() {
   return (
