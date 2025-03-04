@@ -3,36 +3,36 @@
 import { useEffect, useState } from "react";
 
 export default function Page() {
-  const [authCookieValue, setAuthCookieValue] = useState("");
+  const [whoami, whoamiSet] = useState("");
 
-  const makeGetRequest = async () => {
-    const response = await fetch("/api/cookies/get");
-    const data = await response.json();
-    setAuthCookieValue(data.auth);
+  const whoamiFetch = async () => {
+    const response = await fetch("/api/whoami");
+    const whoami = await response.text();
+    whoamiSet(whoami);
   };
 
   const makeSetRequest = async () => {
     await fetch("/api/cookies/set");
-    await makeGetRequest();
+    await whoamiFetch();
   };
 
   const makeDeleteRequest = async () => {
     await fetch("/api/cookies/delete");
-    await makeGetRequest();
+    await whoamiFetch();
   };
 
   useEffect(() => {
-    makeGetRequest();
+    whoamiFetch();
   }, []);
 
   return (
     <>
       <h1>Demo: Route Cookies</h1>
-      <div className='row'>
+      <div className="row">
         <button onClick={makeSetRequest}>Set Cookie `auth`</button>
         <button onClick={makeDeleteRequest}>Delete Cookie `auth`</button>
       </div>
-      <p>`auth` Cookie Value:{authCookieValue ?? "<COOKIE NOT SET>"}</p>
+      <p>You Are:{whoami}</p>
     </>
   );
 }
