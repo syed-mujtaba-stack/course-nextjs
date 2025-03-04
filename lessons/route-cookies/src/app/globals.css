@@ -1,0 +1,12 @@
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+body {
+  font-family: monospace;
+}
+
+button {
+  cursor: pointer;
+}
