@@ -1,0 +1,5 @@
+### Simple
+GET http://localhost:3000/api
+
+### Search Parameter
+GET http://localhost:3000/api?name=John
