@@ -11,13 +11,13 @@ export default function Page() {
     whoamiSet(whoami);
   };
 
-  const makeSetRequest = async () => {
-    await fetch("/api/cookies/set");
+  const login = async () => {
+    await fetch("/api/login");
     await whoamiFetch();
   };
 
-  const makeDeleteRequest = async () => {
-    await fetch("/api/cookies/delete");
+  const logout = async () => {
+    await fetch("/api/logout");
     await whoamiFetch();
   };
 
@@ -29,10 +29,10 @@ export default function Page() {
     <>
       <h1>Demo: Route Cookies</h1>
       <div className="row">
-        <button onClick={makeSetRequest}>Set Cookie `auth`</button>
-        <button onClick={makeDeleteRequest}>Delete Cookie `auth`</button>
+        <button onClick={login}>Login</button>
+        <button onClick={logout}>Logout</button>
       </div>
-      <p>You Are:{whoami}</p>
+      <p>You Are: {whoami}</p>
     </>
   );
 }
