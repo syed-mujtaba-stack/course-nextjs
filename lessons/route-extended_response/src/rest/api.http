@@ -1,0 +1,7 @@
+### Redirect - Show Response
+# @no-redirect
+GET http://localhost:3000/api/redirect
+
+### Redirect - Show Redirected
+GET http://localhost:3000/api/redirect
+
