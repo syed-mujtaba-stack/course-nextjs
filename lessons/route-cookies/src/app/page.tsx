@@ -27,7 +27,7 @@ export default function Page() {
 
   return (
     <>
-      <h1>Demo: Route Cookies</h1>
+      <h1>Demo: Cookies</h1>
       <div className="row">
         <button onClick={login}>Login</button>
         <button onClick={logout}>Logout</button>
