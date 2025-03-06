@@ -5,7 +5,7 @@ import { Column } from "./Layout";
 export async function TableOfContents() {
   const toc = await fetchTableOfContents();
   return (
-    <Column className={`w-96 bg-gray-700`}>
+    <Column className={`w-[569px] bg-gray-700 text-xl`}>
       {toc.map((item, i) => (
         <Link
           key={item.slug}

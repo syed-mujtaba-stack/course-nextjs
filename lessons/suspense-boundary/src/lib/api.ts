@@ -26,7 +26,8 @@ export async function fetchDescription() {
     await delay(6000);
   }
   return {
-    description: `Learn TypeScript in this comprehensive course. 
+    title: 'TypeScript Course',
+    body: `Learn TypeScript in this comprehensive course. 
       We'll cover everything from the basics to advanced topics like 
       generics, type guards, and more.`,
   };
