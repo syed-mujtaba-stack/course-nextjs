@@ -1,4 +1,4 @@
-import { PrimeFactors } from "@/lib/PrimeFactors";
+import { TableOfContents } from "@/lib/TableOfContents";
 import { PrimeFactorLoading } from "@/lib/PrimeFactorsLoading";
 import { Suspense } from "react";
 
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <h1 className="text-3xl">Prime Factors for {input}</h1>
       <Suspense fallback={<PrimeFactorLoading />}>
-        <PrimeFactors input={input} />
+        <TableOfContents input={input} />
       </Suspense>
     </>
   );
