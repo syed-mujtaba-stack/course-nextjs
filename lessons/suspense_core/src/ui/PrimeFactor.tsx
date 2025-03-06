@@ -1,5 +1,5 @@
-import { primeFactorAPI } from "./primeFactorAPI";
 import { commonClassName } from "./common";
+import { primeFactorAPI } from "./primeFactorAPI";
 
 export async function PrimeFactor() {
   const [factor1, factor2] = await primeFactorAPI(48999999930000000000);
