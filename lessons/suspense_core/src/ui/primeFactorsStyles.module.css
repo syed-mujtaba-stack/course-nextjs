@@ -1,5 +1,5 @@
 .common {
-  @apply flex items-center justify-center border-dashed border-8 border-gray-900 text-black w-full h-[300px];
+  @apply flex items-center justify-center border-dashed border-8 text-2xl border-gray-900 text-black w-full h-[300px];
 }
 
 @keyframes transitionIn {
