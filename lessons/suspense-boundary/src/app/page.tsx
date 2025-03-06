@@ -1,5 +1,5 @@
-import { PrimeFactors } from "@/ui/PrimeFactors";
-import { PrimeFactorLoading } from "@/ui/PrimeFactorsLoading";
+import { PrimeFactors } from "@/lib/PrimeFactors";
+import { PrimeFactorLoading } from "@/lib/PrimeFactorsLoading";
 import { Suspense } from "react";
 
 export default function Home() {
