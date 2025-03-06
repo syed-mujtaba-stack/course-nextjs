@@ -1,6 +1,6 @@
 import { PrimeFactors } from "@/ui/PrimeFactors";
-import { Suspense } from "react";
 import { PrimeFactorLoading } from "@/ui/PrimeFactorsLoading";
+import { Suspense } from "react";
 
 export default function Home() {
   const input = 6999999989 * 7000000001;
