@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Column } from "./Layout";
 import { LessonDescription } from "./LessonDescription";
 import { LessonVideo } from "./LessonVideo";
@@ -5,8 +6,10 @@ import { LessonVideo } from "./LessonVideo";
 export const Lesson = () => {
   return (
     <Column className="flex-1">
-      <LessonVideo />
-      <LessonDescription />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LessonVideo />
+        <LessonDescription />
+      </Suspense>
     </Column>
   );
 };
