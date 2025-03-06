@@ -1,0 +1,18 @@
+.common {
+  @apply flex items-center justify-center border-dashed border-8 text-2xl border-gray-900 text-black w-full h-[300px];
+}
+
+@keyframes transitionIn {
+  0% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.component {
+  composes: common;
+  animation: 1s ease-in-out 0s 1 transitionIn;
+}
