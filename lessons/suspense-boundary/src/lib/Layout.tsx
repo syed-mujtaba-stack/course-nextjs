@@ -2,10 +2,15 @@ export function Row({
   children,
   vAlign,
   gap,
-}: React.PropsWithChildren<{ gap?: number; vAlign?: "center" }>) {
+  className,
+}: React.PropsWithChildren<{
+  gap?: number;
+  vAlign?: "center";
+  className?: string;
+}>) {
   return (
     <div
-      className="flex flex-row"
+      className={`flex flex-row ${className}`}
       style={{ gap, ...(vAlign == "center" ? { alignItems: "center" } : {}) }}
     >
       {children}
@@ -16,9 +21,10 @@ export function Row({
 export function Column({
   children,
   gap,
-}: React.PropsWithChildren<{ gap?: number }>) {
+  className,
+}: React.PropsWithChildren<{ gap?: number; className?: string }>) {
   return (
-    <div className="flex flex-col" style={{ gap }}>
+    <div className={`flex flex-col ${className}`} style={{ gap }}>
       {children}
     </div>
   );

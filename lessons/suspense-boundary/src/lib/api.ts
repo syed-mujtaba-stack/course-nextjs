@@ -1,6 +1,36 @@
 import thumbnail from "../../public/images/thumbnail.png";
 
+/** For easier development you can set this to false */
+const enableDelay = false;
+
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Note: This is a mock API
+ */
+export async function fetchVideo() {
+  if (enableDelay) {
+    await delay(4000);
+  }
+  return {
+    thumbnail,
+    url: "https://booleanart.com/course/typescript",
+  };
+}
+
+/**
+ * Note: This is a mock API
+ */
+export async function fetchDescription() {
+  if (enableDelay) {
+    await delay(6000);
+  }
+  return {
+    description: `Learn TypeScript in this comprehensive course. 
+      We'll cover everything from the basics to advanced topics like 
+      generics, type guards, and more.`,
+  };
+}
 
 type TableOfContentsItem = {
   slug: string;
@@ -11,7 +41,9 @@ type TableOfContentsItem = {
  * Note: This is a mock API
  */
 export async function fetchTableOfContents(): Promise<TableOfContentsItem[]> {
-  await delay(2000);
+  if (enableDelay) {
+    await delay(2000);
+  }
   return [
     {
       title: "Introduction",
@@ -310,27 +342,4 @@ export async function fetchTableOfContents(): Promise<TableOfContentsItem[]> {
       slug: "enums-considered-harmful",
     },
   ];
-}
-
-/**
- * Note: This is a mock API
- */
-export async function fetchVideo() {
-  await delay(4000);
-  return {
-    thumbnail,
-    url: "https://booleanart.com/course/typescript",
-  };
-}
-
-/**
- * Note: This is a mock API
- */
-export async function fetchDescription() {
-  await delay(6000);
-  return {
-    description: `Learn TypeScript in this comprehensive course. 
-      We'll cover everything from the basics to advanced topics like 
-      generics, type guards, and more.`,
-  };
 }
