@@ -14,5 +14,5 @@
 
 .component {
   composes: common;
-  animation: 1s ease-out 0s 1 transitionIn;
+  animation: 1s ease-in-out 0s 1 transitionIn;
 }
