@@ -1,3 +1,5 @@
+import thumbnail from "../../public/images/thumbnail.png";
+
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 type TableOfContentsItem = {
@@ -308,4 +310,11 @@ export async function fetchTableOfContents(): Promise<TableOfContentsItem[]> {
       slug: "enums-considered-harmful",
     },
   ];
+}
+
+export async function fetchVideo() {
+  await delay(4000);
+  return {
+    thumbnail,
+  };
 }
