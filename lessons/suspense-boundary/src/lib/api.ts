@@ -1,7 +1,7 @@
 import thumbnail from "../../public/images/thumbnail.png";
 
-/** For easier development you can set this to false */
-const enableDelay = false;
+/** For easier development you can set this to `false` */
+const enableDelay = true;
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
