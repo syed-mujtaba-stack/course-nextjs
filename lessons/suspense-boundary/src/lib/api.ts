@@ -312,9 +312,25 @@ export async function fetchTableOfContents(): Promise<TableOfContentsItem[]> {
   ];
 }
 
+/**
+ * Note: This is a mock API
+ */
 export async function fetchVideo() {
   await delay(4000);
   return {
     thumbnail,
+    url: "https://booleanart.com/course/typescript",
+  };
+}
+
+/**
+ * Note: This is a mock API
+ */
+export async function fetchDescription() {
+  await delay(6000);
+  return {
+    description: `Learn TypeScript in this comprehensive course. 
+      We'll cover everything from the basics to advanced topics like 
+      generics, type guards, and more.`,
   };
 }
