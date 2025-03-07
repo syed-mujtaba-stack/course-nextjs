@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Column } from "./Layout";
 import { LessonDescription } from "./LessonDescription";
 import { LessonVideo } from "./LessonVideo";
-import { Loading } from "./Loaders/Loading";
+import { LessonLoading } from "./Loaders/LessonLoading";
 import { LessonVideoLoading } from "./Loaders/LessonVideoLoading";
 
 export const Lesson = () => {
@@ -11,7 +11,7 @@ export const Lesson = () => {
       <Suspense fallback={<LessonVideoLoading />}>
         <LessonVideo />
       </Suspense>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LessonLoading />}>
         <LessonDescription />
       </Suspense>
     </Column>
