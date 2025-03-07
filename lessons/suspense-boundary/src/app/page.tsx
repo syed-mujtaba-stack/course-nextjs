@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { PageRoot, Row } from "@/lib/Layout";
 import { Lesson } from "@/lib/Lesson";
 import { TableOfContentsLoading } from "@/lib/Loaders/TableOfContentsLoading";
@@ -10,9 +11,7 @@ export default function Home() {
     <PageRoot>
       <Nav />
       <Row flex={1}>
-        <Suspense fallback={<TableOfContentsLoading />}>
-          <TableOfContents />
-        </Suspense>
+        <TableOfContents />
         <Lesson />
       </Row>
     </PageRoot>

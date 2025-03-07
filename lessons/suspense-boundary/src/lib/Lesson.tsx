@@ -5,17 +5,13 @@ import { LessonDescription } from "./LessonDescription";
 import { LessonVideo } from "./LessonVideo";
 import { LessonLoading } from "./Loaders/LessonLoading";
 import { LessonVideoLoading } from "./Loaders/LessonVideoLoading";
-import { LessonDescriptionLoading } from './Loaders/LessonDescriptionLoading';
+import { LessonDescriptionLoading } from "./Loaders/LessonDescriptionLoading";
 
 export const Lesson = () => {
   return (
     <Column flex={1}>
-      <Suspense fallback={<LessonVideoLoading />}>
-        <LessonVideo />
-      </Suspense>
-      <Suspense fallback={<LessonDescriptionLoading />}>
-        <LessonDescription />
-      </Suspense>
+      <LessonVideo />
+      <LessonDescription />
     </Column>
   );
 };
