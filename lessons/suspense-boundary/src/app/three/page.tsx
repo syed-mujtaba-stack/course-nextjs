@@ -12,10 +12,10 @@ export default function Home() {
     <PageRoot>
       <Nav />
       <Row flex={1}>
-        <Suspense fallback={<PageLoading />}>
+        <Suspense fallback={<TableOfContentsLoading />}>
           <TableOfContents />
-          <Lesson />
         </Suspense>
+        <Lesson />
       </Row>
     </PageRoot>
   );
