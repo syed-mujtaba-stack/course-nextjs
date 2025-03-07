@@ -1,22 +1,15 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { PageRoot, Row } from "@/lib/Layout";
-import { Lesson } from "@/lib/Lesson";
-import { PageLoading } from "@/lib/Loaders/PageLoading";
-import { TableOfContentsLoading } from "@/lib/Loaders/TableOfContentsLoading";
-import { Nav } from "@/lib/Nav";
-import { TableOfContents } from "@/lib/TableOfContents";
-import { Suspense } from "react";
+import { Example } from "@/lib/Example";
 
-export default function Home() {
+export default function Page() {
   return (
-    <PageRoot>
-      <Nav />
-      <Row flex={1}>
-        <Suspense fallback={<PageLoading />}>
-          <TableOfContents />
-          <Lesson />
-        </Suspense>
-      </Row>
-    </PageRoot>
+    <div className="text-white text-4xl p-4 space-y-4">
+      <div>Pick an example 🌹</div>
+      <ul className="space-y-4">
+        <Example url="/none" title="Without Suspense" />
+        <Example url="/three" title="Three Suspense Boundaries" />
+        <Example url="/two" title="Two Suspense Boundaries" />
+        <Example url="/one" title="One Suspense Boundary" />
+      </ul>
+    </div>
   );
 }
