@@ -2,16 +2,22 @@ export function Row({
   children,
   vAlign,
   gap,
+  flex,
   className,
 }: React.PropsWithChildren<{
   gap?: number;
+  flex?: number;
   vAlign?: "center";
   className?: string;
 }>) {
   return (
     <div
       className={`flex flex-row ${className ?? ""}`}
-      style={{ gap, ...(vAlign == "center" ? { alignItems: "center" } : {}) }}
+      style={{
+        gap,
+        ...(vAlign == "center" ? { alignItems: "center" } : {}),
+        ...(flex ? { flex } : {}),
+      }}
     >
       {children}
     </div>

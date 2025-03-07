@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <PageRoot>
       <Nav />
-      <Row>
+      <Row flex={1}>
         <Suspense fallback={<TableOfContentsLoading />}>
           <TableOfContents />
         </Suspense>
