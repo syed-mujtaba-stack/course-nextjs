@@ -1,7 +1,7 @@
 import thumbnail from "../../public/images/thumbnail.png";
 
 /** For easier development you can set this to `stuck` or `none` */
-const enableDelay: "stuck" | "none" | "normal" = "normal";
+const enableDelay: "stuck" | "none" | "normal" = "stuck";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
