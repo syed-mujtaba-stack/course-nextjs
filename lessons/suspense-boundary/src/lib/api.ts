@@ -1,7 +1,7 @@
 import thumbnail from "../../public/images/thumbnail.png";
 
-/** For easier development you can set this to `false` */
-const enableDelay = true;
+/** For easier development you can set this to `stuck` or `none` */
+const enableDelay: "stuck" | "none" | "normal" = "normal";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -9,9 +9,9 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
  * Note: This is a mock API
  */
 export async function fetchVideo() {
-  if (enableDelay) {
-    await delay(4000);
-  }
+  await delay(
+    enableDelay == "stuck" ? 999999999 : enableDelay == "none" ? 0 : 5000
+  );
   return {
     thumbnail,
     url: "https://booleanart.com/course/typescript",
@@ -22,11 +22,11 @@ export async function fetchVideo() {
  * Note: This is a mock API
  */
 export async function fetchDescription() {
-  if (enableDelay) {
-    await delay(6000);
-  }
+  await delay(
+    enableDelay == "stuck" ? 999999999 : enableDelay == "none" ? 0 : 6000
+  );
   return {
-    title: 'TypeScript Course',
+    title: "TypeScript Course",
     body: `Learn TypeScript in this comprehensive course. 
       We'll cover everything from the basics to advanced topics like 
       generics, type guards, and more.`,
@@ -42,9 +42,9 @@ type TableOfContentsItem = {
  * Note: This is a mock API
  */
 export async function fetchTableOfContents(): Promise<TableOfContentsItem[]> {
-  if (enableDelay) {
-    await delay(2000);
-  }
+  await delay(
+    enableDelay == "stuck" ? 999999999 : enableDelay == "none" ? 0 : 3000
+  );
   return [
     {
       title: "Introduction",
