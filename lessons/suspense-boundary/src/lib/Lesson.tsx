@@ -6,11 +6,11 @@ import { LessonLoading } from "./Loaders/LessonLoading";
 
 export const Lesson = () => {
   return (
-    <Suspense fallback={<LessonLoading />}>
-      <Column className="flex-1">
+    <Column flex={1}>
+      <Suspense fallback={<LessonLoading />}>
         <LessonVideo />
         <LessonDescription />
-      </Column>
-    </Suspense>
+      </Suspense>
+    </Column>
   );
 };

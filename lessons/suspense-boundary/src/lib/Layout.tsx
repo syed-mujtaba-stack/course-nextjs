@@ -42,10 +42,18 @@ export const PageRoot = ({ children }: React.PropsWithChildren) => {
 export function Column({
   children,
   gap,
+  flex,
   className,
-}: React.PropsWithChildren<{ gap?: number; className?: string }>) {
+}: React.PropsWithChildren<{
+  gap?: number;
+  flex?: number;
+  className?: string;
+}>) {
   return (
-    <div className={`flex flex-col ${className ?? ""}`} style={{ gap }}>
+    <div
+      className={`flex flex-col ${className ?? ""}`}
+      style={{ gap, ...(flex ? { flex } : {}) }}
+    >
       {children}
     </div>
   );
