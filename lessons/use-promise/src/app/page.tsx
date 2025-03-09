@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { PrimeFactors } from "@/ui/PrimeFactors";
 import { PrimeFactorLoading } from "@/ui/PrimeFactorsLoading";
 import { Suspense } from "react";
@@ -8,7 +7,9 @@ export default function Home() {
   return (
     <>
       <h1 className="text-3xl">Prime Factors for {input}</h1>
-      <PrimeFactors input={input} />
+      <Suspense fallback={<PrimeFactorLoading />}>
+        <PrimeFactors input={input} />
+      </Suspense>
     </>
   );
 }
