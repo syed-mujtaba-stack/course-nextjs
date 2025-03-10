@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Column, PageRoot, Row } from "@/lib/Layout";
 import { PageLoading } from "@/lib/Loaders/PageLoading";
 import { Nav } from "@/lib/Nav";
