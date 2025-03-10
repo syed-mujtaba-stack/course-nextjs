@@ -3,9 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Lesson } from "../api";
+import { use } from 'react';
 
-export function LessonVideo(props: { lesson: Lesson }) {
-  const { video } = props.lesson;
+export function LessonVideo(props: { lesson: Promise<Lesson> }) {
+  const { video } = use(props.lesson);
 
   return (
     <Link href={video.url} target="_blank">

@@ -9,16 +9,18 @@ import { LessonDescription } from "@/lib/Lesson/LessonDescription";
 import { fetchLesson } from "@/lib/api";
 
 export default async function Home() {
-  const lesson = await fetchLesson();
+  const lesson = fetchLesson();
   return (
     <PageRoot>
       <Nav />
       <Row flex={1}>
-        <TableOfContents lesson={lesson} />
-        <Column flex={1}>
-          <LessonVideo lesson={lesson} />
-          <LessonDescription lesson={lesson} />
-        </Column>
+        <Suspense fallback={<PageLoading />}>
+          <TableOfContents lesson={lesson} />
+          <Column flex={1}>
+            <LessonVideo lesson={lesson} />
+            <LessonDescription lesson={lesson} />
+          </Column>
+        </Suspense>
       </Row>
     </PageRoot>
   );
