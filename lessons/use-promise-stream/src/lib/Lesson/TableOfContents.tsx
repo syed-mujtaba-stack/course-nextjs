@@ -1,6 +1,8 @@
+'use client';
+
 import Link from "next/link";
-import type { Lesson } from "./api";
-import { Column } from "./Layout";
+import type { Lesson } from "../api";
+import { Column } from "../Layout";
 
 export async function TableOfContents(props: { lesson: Lesson }) {
   const { toc } = props.lesson;

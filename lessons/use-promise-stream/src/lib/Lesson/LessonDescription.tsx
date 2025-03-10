@@ -1,5 +1,7 @@
-import { Lesson } from './api';
-import { Column } from "./Layout";
+'use strict';
+
+import { Lesson } from '../api';
+import { Column } from "../Layout";
 
 export const LessonDescription = async (props: { lesson: Lesson }) => {
   const { description } = props.lesson;
