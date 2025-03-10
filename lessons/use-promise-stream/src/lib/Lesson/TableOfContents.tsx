@@ -7,6 +7,7 @@ import { use } from 'react';
 
 export function TableOfContents(props: { lesson: Promise<Lesson> }) {
   const { toc } = use(props.lesson);
+  
   return (
     <Column className={`w-[569px] bg-gray-700 text-xl`}>
       {toc.map((item, i) => (
