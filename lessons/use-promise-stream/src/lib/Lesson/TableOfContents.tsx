@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import type { Lesson } from "../api";
 import { Column } from "../Layout";
 
-export async function TableOfContents(props: { lesson: Lesson }) {
+export function TableOfContents(props: { lesson: Lesson }) {
   const { toc } = props.lesson;
   return (
     <Column className={`w-[569px] bg-gray-700 text-xl`}>

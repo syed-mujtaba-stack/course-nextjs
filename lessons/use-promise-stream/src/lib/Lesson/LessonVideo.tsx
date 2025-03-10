@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import { Lesson } from '../api';
+import { Lesson } from "../api";
 
-export const LessonVideo = async (props: { lesson: Lesson }) => {
+export function LessonVideo(props: { lesson: Lesson }) {
   const { video } = props.lesson;
 
   return (
@@ -12,4 +12,4 @@ export const LessonVideo = async (props: { lesson: Lesson }) => {
       <Image alt="video" src={video.thumbnail} className="w-full" />
     </Link>
   );
-};
+}

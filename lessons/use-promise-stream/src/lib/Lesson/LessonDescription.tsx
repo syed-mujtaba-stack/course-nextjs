@@ -1,9 +1,9 @@
-'use strict';
+"use client";
 
-import { Lesson } from '../api';
+import { Lesson } from "../api";
 import { Column } from "../Layout";
 
-export const LessonDescription = async (props: { lesson: Lesson }) => {
+export function LessonDescription(props: { lesson: Lesson }) {
   const { description } = props.lesson;
   return (
     <Column className="p-4 text-white" gap={16}>
@@ -11,4 +11,4 @@ export const LessonDescription = async (props: { lesson: Lesson }) => {
       <p className="text-lg">{description.body}</p>
     </Column>
   );
-};
+}
