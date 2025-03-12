@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 
@@ -11,12 +11,12 @@ function Fallback({ error, resetErrorBoundary }: FallbackProps) {
   );
 }
 
-export const SquareRootError = ({
-  children,
-  onReset,
-}: React.PropsWithChildren<{ onReset: () => void }>) => {
+export const PageError = ({ children }: React.PropsWithChildren) => {
   return (
-    <ErrorBoundary FallbackComponent={Fallback} onReset={onReset}>
+    <ErrorBoundary
+      FallbackComponent={Fallback}
+      onReset={() => window.location.reload()}
+    >
       {children}
     </ErrorBoundary>
   );
