@@ -11,7 +11,9 @@ export const SquareRoot = () => {
       <input
         type="number"
         value={value}
-        onChange={(e) => setValue(+e.target.value)}
+        onChange={(e) => {
+          setValue(+e.target.value);
+        }}
       />
       <Suspense fallback={<div>Calculating...</div>}>
         <SquareRootResult value={value} />
