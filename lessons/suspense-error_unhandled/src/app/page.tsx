@@ -1,7 +1,9 @@
+import { SquareRoot } from "@/lib/SquareRoot";
+
 export default function Page() {
   return (
     <div>
-      <Counter />
+      <SquareRoot />
     </div>
   );
 }
