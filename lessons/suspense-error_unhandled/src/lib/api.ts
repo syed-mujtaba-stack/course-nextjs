@@ -1,15 +1,11 @@
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export async function sqrt(n: number) {
-  console.log(":input:", n);
+export async function fetchSquareRoot(n: number) {
+  console.log("fetchSquareRoot:", n);
   await delay(1000); // simulate slow network
-  return sqrtCore(n);
-}
-
-export function sqrtCore(n: number) {
   if (n < 0) {
-    throw new Error("Cannot sqrt negative number");
+    throw new Error("Cannot calculate square root of negative numbers");
   }
-  const result = Math.sqrt(n).toFixed(2);
+  const result = Math.sqrt(n);
   return result;
 }
