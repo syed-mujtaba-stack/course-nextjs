@@ -10,3 +10,9 @@ input {
   width: 10rem;
   margin-bottom: 20px;
 }
+
+button {
+  font-size: 3rem;
+  font-family: monospace;
+  cursor: pointer;
+}
