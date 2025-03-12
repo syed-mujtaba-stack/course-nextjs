@@ -2,10 +2,23 @@
 
 import styles from "./primeFactorsStyles.module.css";
 import { primeFactorsAPI } from "./primeFactorsAPI";
-import { use } from "react";
+import { useEffect, useState } from "react";
+import { PrimeFactorLoading } from "./PrimeFactorsLoading";
 
 export function PrimeFactors({ input }: { input: number }) {
-  const [factor1, factor2] = use(primeFactorsAPI(input));
+  const [factors, factorsSet] = useState<[number, number] | null>(null);
+
+  useEffect(() => {
+    primeFactorsAPI(input).then(([factor1, factor2]) => {
+      factorsSet([factor1, factor2]);
+    });
+  }, [input]);
+
+  if (factors === null) {
+    return <PrimeFactorLoading />;
+  }
+
+  const [factor1, factor2] = factors;
 
   return (
     <div className={`bg-blue-300 ${styles.component}`}>
