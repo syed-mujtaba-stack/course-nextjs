@@ -2,11 +2,11 @@
 
 import { Suspense, useMemo, useState } from "react";
 import { SquareRootResult } from "./SquareRootResult";
-import { sqrt } from './api';
+import { fetchSqrt } from './api';
 
 export const SquareRoot = () => {
   const [value, setValue] = useState(0);
-  const promise = useMemo(() => sqrt(value), [value]);
+  const promise = useMemo(() => fetchSqrt(value), [value]);
 
   return (
     <>

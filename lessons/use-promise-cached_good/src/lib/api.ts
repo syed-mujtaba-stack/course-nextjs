@@ -1,12 +1,12 @@
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export async function sqrt(n: number) {
+export async function fetchSqrt(n: number) {
   console.log("sqrt:", n);
   await delay(1000); // simulate slow network
   return sqrtCore(n);
 }
 
-export function sqrtCore(n: number) {
+function sqrtCore(n: number) {
   const result = Math.sqrt(n);
   return result;
 }
