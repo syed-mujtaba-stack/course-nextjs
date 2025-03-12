@@ -1,0 +1,9 @@
+body {
+  font-family: monospace;
+  font-size: 3rem;
+}
+
+input {
+  font-size: 3rem;
+  width: 10rem;
+}
