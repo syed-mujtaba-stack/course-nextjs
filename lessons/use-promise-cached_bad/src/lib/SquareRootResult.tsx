@@ -1,7 +1,7 @@
 "use client";
 
-import { use } from "react";
 import { fetchSqrt } from "./api";
+import { use } from "react";
 
 export const SquareRootResult = ({ input }: { input: number }) => {
   const result = use(fetchSqrt(input));
