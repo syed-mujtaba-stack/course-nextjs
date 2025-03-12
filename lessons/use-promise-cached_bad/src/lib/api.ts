@@ -6,7 +6,7 @@ export async function sqrt(n: number) {
   return sqrtCore(n);
 }
 
-export function sqrtCore(n: number) {
+function sqrtCore(n: number) {
   const result = Math.sqrt(n);
   return result;
 }

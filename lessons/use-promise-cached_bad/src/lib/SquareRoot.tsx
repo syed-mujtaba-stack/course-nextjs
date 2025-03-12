@@ -1,13 +1,10 @@
 "use client";
 
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useState } from "react";
 import { SquareRootResult } from "./SquareRootResult";
-import { sqrt } from './api';
 
 export const SquareRoot = () => {
   const [value, setValue] = useState(0);
-  const promise = useMemo(() => sqrt(value), [value]);
-
   return (
     <>
       <input
@@ -18,7 +15,7 @@ export const SquareRoot = () => {
         }}
       />
       <Suspense fallback={<div>Calculating...</div>}>
-        <SquareRootResult input={promise} />
+        <SquareRootResult input={value} />
       </Suspense>
     </>
   );
