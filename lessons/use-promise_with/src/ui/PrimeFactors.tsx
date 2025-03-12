@@ -1,11 +1,10 @@
 "use client";
 
 import styles from "./primeFactorsStyles.module.css";
-import { primeFactorsAPI } from "./primeFactorsAPI";
 import { use } from "react";
 
-export function PrimeFactors({ input }: { input: number }) {
-  const [factor1, factor2] = use(primeFactorsAPI(input));
+export function PrimeFactors({ promise }: { promise: Promise<[number, number]> }) {
+  const [factor1, factor2] = use(promise);
 
   return (
     <div className={`bg-blue-300 ${styles.component}`}>
