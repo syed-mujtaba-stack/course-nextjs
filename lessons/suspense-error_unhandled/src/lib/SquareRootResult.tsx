@@ -1,10 +1,11 @@
-import { use } from 'react';
-import { sqrt } from './api';
+import { use, useEffect, useState } from "react";
+import { sqrt } from "./api";
 
 export const SquareRootResult = ({ value }: { value: number }) => {
-  console.log('call start');
-  const result = use(sqrt(value));
-  console.log('call end');
-  
+  const [result, setResult] = useState("");
+  useEffect(() => {
+    setResult(use(sqrt(value)));
+  }, [value]);
+
   return <div>{result}</div>;
-}
+};
