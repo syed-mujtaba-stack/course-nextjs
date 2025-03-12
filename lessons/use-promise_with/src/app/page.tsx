@@ -1,5 +1,5 @@
 import { PrimeFactors } from "@/ui/PrimeFactors";
-import { primeFactorsAPI } from '@/ui/primeFactorsAPI';
+import { primeFactorsAPI } from "@/ui/primeFactorsAPI";
 import { PrimeFactorLoading } from "@/ui/PrimeFactorsLoading";
 import { Suspense } from "react";
 
@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <h1 className="text-3xl">Prime Factors for {input}</h1>
       <Suspense fallback={<PrimeFactorLoading />}>
-        <PrimeFactors promise={promise}/>
+        <PrimeFactors promise={promise} />
       </Suspense>
     </>
   );

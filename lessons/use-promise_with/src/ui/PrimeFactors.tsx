@@ -3,7 +3,11 @@
 import styles from "./primeFactorsStyles.module.css";
 import { use } from "react";
 
-export function PrimeFactors({ promise }: { promise: Promise<[number, number]> }) {
+export function PrimeFactors({
+  promise,
+}: {
+  promise: Promise<[number, number]>;
+}) {
   const [factor1, factor2] = use(promise);
 
   return (
