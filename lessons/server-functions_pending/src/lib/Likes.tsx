@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import { incrementLikes } from "./functions";
+import { useTransition } from "react";
 
 export function Likes({ initial }: { initial: number }) {
   const [isPending, startTransition] = useTransition();
