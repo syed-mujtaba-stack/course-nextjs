@@ -5,8 +5,8 @@ import { incrementLikes } from "./functions";
 import { useTransition } from "react";
 
 export function Likes({ initial }: { initial: number }) {
-  const [isPending, startTransition] = useTransition();
   const [likeCount, setLikeCount] = useState(initial);
+  const [isPending, startTransition] = useTransition();
 
   const onClickUp = () => {
     startTransition(async () => {
