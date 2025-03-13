@@ -13,16 +13,13 @@ export function Likes({
   const [likeCount, setLikeCount] = useState(initial);
 
   const onClickUp = async () => {
-    const currentCount = await incrementLikes();
-    setLikeCount(currentCount);
+    setLikeCount(await incrementLikes());
   };
   const onClickReset = async () => {
-    const currentCount = await resetLikes();
-    setLikeCount(currentCount);
+    setLikeCount(await resetLikes());
   };
   const onClickDown = async () => {
-    const currentCount = await decrementLikes();
-    setLikeCount(currentCount);
+    setLikeCount(await decrementLikes());
   };
 
   return (
