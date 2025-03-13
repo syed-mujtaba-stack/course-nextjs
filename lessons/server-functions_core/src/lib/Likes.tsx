@@ -1,20 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import { incrementLikes } from "./functions";
+import { incrementLikes, resetLikes } from "./functions";
 
 export function Likes({ initial }: { initial: number }) {
   const [likeCount, setLikeCount] = useState(initial);
 
-  const onClick = async () => {
+  const onClickUp = async () => {
     const currentCount = await incrementLikes();
+    setLikeCount(currentCount);
+  };
+  const onClickReset = async () => {
+    const currentCount = await resetLikes();
     setLikeCount(currentCount);
   };
 
   return (
     <>
       <p>Total Likes: {likeCount}</p>
-      <button onClick={onClick}>👍</button>
+      <button onClick={onClickUp}>👍</button>
+      <button onClick={onClickReset}>🔥</button>
     </>
   );
 }
