@@ -8,6 +8,11 @@ export default function Page() {
   const [isPending, startTransition] = useTransition();
   const [serverResult, setServerResult] = useState<LoginResponse | null>(null);
 
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setName(e.target.value);
+    setServerResult(null);
+  }
+
   function handleSubmit() {
     startTransition(async () => {
       const result = await login({ username: name });
@@ -21,10 +26,7 @@ export default function Page() {
         <input
           name="username"
           value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-            setServerResult(null);
-          }}
+          onChange={handleChange}
           placeholder="Enter your username"
           disabled={isPending}
         />
@@ -33,11 +35,8 @@ export default function Page() {
         </button>
       </form>
 
-      {serverResult != null && "error" in serverResult && (
-        <p className="error">{serverResult.error}</p>
-      )}
-      {serverResult != null && "success" in serverResult! && (
-        <p className="success">{serverResult.success}</p>
+      {serverResult != null && (
+        <p className={serverResult.type}>{serverResult.message}</p>
       )}
     </div>
   );

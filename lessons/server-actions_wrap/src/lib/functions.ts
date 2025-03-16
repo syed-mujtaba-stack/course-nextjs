@@ -1,12 +1,9 @@
 "use server";
 
-export type LoginResponse =
-  | {
-      success: string;
-    }
-  | {
-      error: string;
-    };
+export type LoginResponse = {
+  type: "error" | "success";
+  message: string;
+};
 
 export async function login({
   username,
@@ -15,10 +12,12 @@ export async function login({
 }): Promise<LoginResponse> {
   if (!username) {
     return {
-      error: "Error: username cannot be empty",
+      type: "error",
+      message: "Error: username cannot be empty",
     };
   }
   return {
-    success: `Logged in as "${username}"`,
+    type: "success",
+    message: `Success: Logged in as "${username}"`,
   };
 }
