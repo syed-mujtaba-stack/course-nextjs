@@ -15,10 +15,10 @@ export async function login({
 }): Promise<LoginResponse> {
   if (!username) {
     return {
-      error: "username cannot be empty",
+      error: "Error: username cannot be empty",
     };
   }
   return {
-    success: "login successful",
+    success: `Logged in as "${username}"`,
   };
 }
