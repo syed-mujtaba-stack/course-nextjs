@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Page() {
   const [name, setName] = useState("");
   return (
-    <div className="page">
+    <div className="root">
       <form action="/api/login" method="POST">
         <input
           name="username"

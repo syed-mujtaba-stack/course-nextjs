@@ -9,7 +9,7 @@ body {
   flex: 1;
 }
 
-.page {
+.root {
   @apply flex flex-1 items-center justify-center;
 }
 
