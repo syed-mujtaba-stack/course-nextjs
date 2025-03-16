@@ -1,15 +1,12 @@
 "use client";
 
-import { login } from "@/lib/functions";
+import { login, LoginResponse } from "@/lib/functions";
 import { useState, useTransition } from "react";
 
 export default function Page() {
   const [name, setName] = useState("");
   const [isPending, startTransition] = useTransition();
-  const [serverResult, setServerResult] = useState<{
-    success?: string;
-    error?: string;
-  }>({});
+  const [serverResult, setServerResult] = useState<LoginResponse | null>(null);
 
   function handleSubmit() {
     startTransition(async () => {
@@ -26,16 +23,20 @@ export default function Page() {
           value={name}
           onChange={(e) => {
             setName(e.target.value);
-            setServerResult({});
+            setServerResult(null);
           }}
           placeholder="Enter your username"
+          disabled={isPending}
         />
         <button type="submit" disabled={isPending}>
           Submit
         </button>
       </form>
-      {serverResult.error && <p className="error">{serverResult.error}</p>}
-      {serverResult.success && (
+
+      {serverResult != null && "error" in serverResult && (
+        <p className="error">{serverResult.error}</p>
+      )}
+      {serverResult != null && "success" in serverResult! && (
         <p className="success">{serverResult.success}</p>
       )}
     </div>
