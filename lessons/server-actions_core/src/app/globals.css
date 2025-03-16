@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 5px;
+  height: 100vh;
+  display: flex;
+  flex: 1;
+}
+
+.root {
+  @apply flex flex-1 items-center justify-center;
+}
+
+form {
+  @apply flex flex-col gap-2 w-full max-w-96;
+}
+
+button {
+  @apply cursor-pointer text-base text-white p-2 rounded-md transition-all duration-300 bg-blue-500 hover:bg-blue-700;
+}
+
+input {
+  @apply p-2 border border-gray-300 rounded-md;
+}
