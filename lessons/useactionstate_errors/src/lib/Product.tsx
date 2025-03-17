@@ -11,13 +11,14 @@ export function Product({ product }: { product: string }) {
     <div className="product-row">
       <ProductImage product={product} />
       <div className="product-col">
-        <form action={action}>
-          <input hidden readOnly name="product" value={product} />
-          <button type="submit" disabled={isPending}>
-            Add to cart
-          </button>
-        </form>
-        {serverResponse != null && (
+        {serverResponse == null ? (
+          <form action={action}>
+            <input hidden readOnly name="product" value={product} />
+            <button type="submit" disabled={isPending}>
+              Add to cart
+            </button>
+          </form>
+        ) : (
           <p className={serverResponse.type}>{serverResponse.message}</p>
         )}
       </div>
