@@ -1,5 +1,5 @@
+import { Likes } from "@/lib/Likes";
 import { initial } from "@/lib/functions";
-import { Likes } from '@/lib/Likes';
 
 export default async function Page() {
   const initialServerState = await initial();
