@@ -6,7 +6,7 @@ export type AddToCartResponse = {
 };
 
 export async function addToCart(
-  _prevState: unknown,
+  _state: unknown,
   formData: FormData
 ): Promise<AddToCartResponse> {
   await new Promise((resolve) => setTimeout(resolve, 1000));
