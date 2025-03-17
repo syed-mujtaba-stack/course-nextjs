@@ -3,11 +3,7 @@
 import { ServerState, update } from "./functions";
 import { useActionState } from "react";
 
-export function Likes({
-  initial,
-}: {
-  initial: ServerState;
-}) {
+export function Likes({ initial }: { initial: ServerState }) {
   const [state, action, isPending] = useActionState(update, initial);
 
   return (
