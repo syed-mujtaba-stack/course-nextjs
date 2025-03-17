@@ -1,7 +1,7 @@
 "use client";
 
-import { login, LoginResponse } from "@/lib/functions";
 import { useState, useTransition } from "react";
+import { login, LoginResponse } from "@/lib/functions";
 
 export default function Page() {
   const [name, setName] = useState("");
