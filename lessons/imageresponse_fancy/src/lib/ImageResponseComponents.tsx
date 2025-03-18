@@ -5,11 +5,9 @@ export const ImageResponseRoot = ({ children }: React.PropsWithChildren) => {
         /** Take up all the space from the parent */
         height: "100%",
         width: "100%",
-
         /** Setup a column layout */
         display: "flex",
         flexDirection: "column",
-
         /** Allow children to position themselves relatively */
         position: "relative",
       }}
