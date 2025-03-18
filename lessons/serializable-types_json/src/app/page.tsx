@@ -17,7 +17,7 @@ export default function Page() {
           isDate: body.date instanceof Date,
           type: typeof body.date,
           value: body.date,
-        });
+        })
       );
   }, []);
 
