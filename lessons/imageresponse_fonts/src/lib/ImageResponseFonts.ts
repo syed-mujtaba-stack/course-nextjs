@@ -7,6 +7,7 @@ type FontOptions = NonNullable<
 >[number];
 
 export const fontGagalin = "Gagalin";
+
 export const getFontGagalin = async (): Promise<FontOptions> => {
   const data = await fs.readFile(path.resolve("./public/fonts/Gagalin.otf"));
   return {
