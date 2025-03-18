@@ -2,6 +2,7 @@ import {
   ImageResponseCenteredText,
   ImageResponseFullBackgroundImg,
   ImageResponseRoot,
+  localImageToSrc,
 } from "@/lib/ImageResponseComponents";
 import { ImageResponse } from "next/og";
 
@@ -9,7 +10,9 @@ export async function GET() {
   return new ImageResponse(
     (
       <ImageResponseRoot>
-        <ImageResponseFullBackgroundImg src="http://localhost:3000/images/background.png" />
+        <ImageResponseFullBackgroundImg
+          src={await localImageToSrc("./public/images/background.png")}
+        />
         <ImageResponseCenteredText>
           <div style={{ fontSize: "69px" }}>Sample Image</div>
         </ImageResponseCenteredText>

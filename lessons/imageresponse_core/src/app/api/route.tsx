@@ -9,11 +9,8 @@ export async function GET() {
           height: "100%",
           width: "100%",
 
-          /** Setup a column layout */
-          display: "flex",
-          flexDirection: "column",
-
           /** Center the children */
+          display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}

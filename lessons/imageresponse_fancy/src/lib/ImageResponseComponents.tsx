@@ -50,3 +50,13 @@ export const ImageResponseCenteredText = ({
     </div>
   );
 };
+
+import path from "path";
+import { promises as fs } from "fs";
+export async function localImageToSrc(localPath: string): Promise<string> {
+  const imageBuffer = await fs.readFile(path.resolve(localPath));
+  const base64ImageSrc = `data:image/png;base64,${imageBuffer.toString(
+    "base64"
+  )}`;
+  return base64ImageSrc;
+}
