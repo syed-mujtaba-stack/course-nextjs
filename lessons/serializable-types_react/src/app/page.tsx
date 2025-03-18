@@ -7,7 +7,11 @@ export default function Page() {
   useEffect(() => {
     serverFunction({ date: new Date() })
       .then((body) =>
-        console.log(body.date instanceof Date, body.date)
+        console.log({
+          isDate: body.date instanceof Date,
+          type: typeof body.date,
+          value: body.date,
+        })
       );
   }, []);
 
