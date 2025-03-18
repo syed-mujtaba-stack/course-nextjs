@@ -1,7 +1,7 @@
-import { ImageResponse } from "next/og";
 import { promises as fs } from "fs";
 import path from "path";
 
+import type { ImageResponse } from "next/og";
 type FontOptions = NonNullable<
   NonNullable<ConstructorParameters<typeof ImageResponse>[1]>["fonts"]
 >[number];
