@@ -8,8 +8,7 @@ import { fontGagalin, getFontGagalin } from "@/lib/ImageResponseFonts";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
-  const message =
-    new URL(req.url).searchParams.get("message") ?? "NO MESSAGE";
+  const message = new URL(req.url).searchParams.get("message") ?? "NO MESSAGE";
 
   return new ImageResponse(
     (
