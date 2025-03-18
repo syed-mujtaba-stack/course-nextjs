@@ -1,4 +1,5 @@
 import {
+  ImageResponseCenteredText,
   ImageResponseFullBackgroundImg,
   ImageResponseRoot,
 } from "@/lib/ImageResponseComponents";
@@ -9,16 +10,9 @@ export async function GET() {
     (
       <ImageResponseRoot>
         <ImageResponseFullBackgroundImg src="http://localhost:3000/images/background.png" />
-        <div
-          style={{
-            display: "flex",
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <ImageResponseCenteredText>
           <div style={{ fontSize: "69px" }}>Sample Image</div>
-        </div>
+        </ImageResponseCenteredText>
       </ImageResponseRoot>
     ),
     {

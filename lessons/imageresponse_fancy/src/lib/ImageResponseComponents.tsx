@@ -33,3 +33,20 @@ export const ImageResponseFullBackgroundImg = ({ src }: { src: string }) => {
     />
   );
 };
+
+export const ImageResponseCenteredText = ({
+  children,
+}: React.PropsWithChildren) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
