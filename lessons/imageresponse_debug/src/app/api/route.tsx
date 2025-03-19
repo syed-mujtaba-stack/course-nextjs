@@ -25,10 +25,10 @@ export async function GET(req: NextRequest) {
       </ImageResponseRoot>
     ),
     {
-      debug: true,
       width: 1080,
       height: 1080,
       fonts: [await getFontGagalin()],
+      debug: true,
     }
   );
 }

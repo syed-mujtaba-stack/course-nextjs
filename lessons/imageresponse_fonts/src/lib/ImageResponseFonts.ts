@@ -3,7 +3,9 @@ import path from "path";
 
 import type { ImageResponse } from "next/og";
 type FontOptions = NonNullable<
-  NonNullable<ConstructorParameters<typeof ImageResponse>[1]>["fonts"]
+  NonNullable<
+    ConstructorParameters<typeof ImageResponse>[1]
+  >["fonts"]
 >[number];
 
 export const fontGagalin = "Gagalin";
