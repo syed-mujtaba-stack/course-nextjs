@@ -51,7 +51,6 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
 
   return (
     <div>
-      <h1>Todos</h1>
       <div>
         <input
           type="text"
