@@ -21,7 +21,11 @@ const DisplayTodo = ({
           onChange={(e) => onUpdateCompleted(todo.id, e.target.checked)}
           className="w-4 h-4"
         />
-        <p className={`text-sm ${todo.completed ? "line-through text-gray-500" : ""}`}>
+        <p
+          className={`text-sm ${
+            todo.completed ? "line-through text-gray-500" : ""
+          }`}
+        >
           {todo.message}
         </p>
       </div>
@@ -61,7 +65,7 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-4 bg-white shadow-md rounded-md">
-      <div className="flex gap-2 mb-4">
+      <form action={onAddTodo} className="flex gap-2 mb-4">
         <input
           type="text"
           value={newTodoMessage}
@@ -69,13 +73,10 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
           placeholder="Add a new todo..."
           className="flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <button
-          onClick={onAddTodo}
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-        >
+        <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
           Add
         </button>
-      </div>
+      </form>
       <ul className="divide-y divide-gray-200">
         {todos.map((todo) => (
           <DisplayTodo
