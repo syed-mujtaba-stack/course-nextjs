@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { createTodo, deleteTodoById, Todo, updateTodoCompletedById } from "../db";
+import {
+  createTodo,
+  deleteTodoById,
+  Todo,
+  updateTodoCompletedById,
+} from "../db";
 import styles from "./Components.module.css";
 
 const DisplayTodo = ({
@@ -76,6 +81,7 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
         />
         <button className={styles.addButton}>Add</button>
       </form>
+      <hr className={styles.divider} />
       <ul className={styles.todoList}>
         {todos.map((todo) => (
           <DisplayTodo
