@@ -29,11 +29,16 @@ export async function addTodo(message: string): Promise<Todo> {
   return result[0] as Todo;
 }
 
-export async function updateTodo(id: string, completed: boolean) {
+export async function updateTodoCompletedById(id: string, completed: boolean) {
   const sql = getSql();
   await sql`
     UPDATE todos
     SET completed = ${completed}
     WHERE id = ${id}
   `;
+}
+
+export async function deleteTodoById(id: string) {
+  const sql = getSql();
+  await sql`DELETE FROM todos WHERE id = ${id}`;
 }

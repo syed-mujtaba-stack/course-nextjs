@@ -1,16 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { Todo, updateTodo } from "../db";
+import { deleteTodoById, Todo, updateTodoCompletedById } from "../db";
 
 export const Todos = ({ initial }: { initial: Todo[] }) => {
   const [todos, setTodos] = useState(initial);
 
   const onTodoCheckboxClick = async (id: string, completed: boolean) => {
-    await updateTodo(id, completed);
+    await updateTodoCompletedById(id, completed);
     setTodos((todos) =>
       todos.map((todo) => (todo.id === id ? { ...todo, completed } : todo))
     );
+  };
+
+  const onTodoDeleteClicked = async (id: string) => {
+    await deleteTodoById(id);
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -25,6 +30,7 @@ export const Todos = ({ initial }: { initial: Todo[] }) => {
               onChange={(e) => onTodoCheckboxClick(todo.id, e.target.checked)}
             />
             <p>{todo.message}</p>
+            <button onClick={() => onTodoDeleteClicked(todo.id)}>❌</button>
           </li>
         ))}
       </ul>
