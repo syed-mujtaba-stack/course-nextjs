@@ -1,9 +1,9 @@
 .container {
-  @apply max-w-md mx-auto mt-8 p-4 bg-white shadow-md rounded-md;
+  @apply max-w-md mx-auto mt-8 p-4 bg-white shadow-md rounded-md border-2;
 }
 
 .form {
-  @apply flex gap-2 mb-4;
+  @apply flex gap-2 pb-4 border-b-4  border-blue-400/40;
 }
 
 .input {
@@ -27,7 +27,7 @@
 }
 
 .checkbox {
-  @apply w-5 h-5 cursor-pointer transition-all duration-200;
+  @apply w-5 h-5 cursor-pointer transition-all duration-200 hover:scale-110;
 }
 
 .todoText {
