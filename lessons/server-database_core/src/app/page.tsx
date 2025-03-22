@@ -1,7 +1,8 @@
-"use client";
+import { getComments } from "@/lib/db";
+import { Commentator } from "@/lib/ui/Commentator";
 
-import { Button } from "@/lib/Button";
+export default async function Page() {
+  const comments = await getComments();
 
-export default function Home() {
-  return <Button onClick={() => alert("Stop Clicking Me!")}>Click Me!</Button>;
+  return <Commentator initial={comments} />;
 }
