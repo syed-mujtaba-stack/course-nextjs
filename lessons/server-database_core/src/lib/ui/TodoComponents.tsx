@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { addTodo, deleteTodoById, Todo, updateTodoCompletedById } from "../db";
+import { createTodo, deleteTodoById, Todo, updateTodoCompletedById } from "../db";
 import styles from "./TodoComponents.module.css";
 
 const DisplayTodo = ({
@@ -60,7 +60,7 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
     const message = newTodoMessage.trim();
     if (!message) return;
     setNewTodoMessage("");
-    const todo = await addTodo(message);
+    const todo = await createTodo(message);
     setTodos((todos) => [...todos, todo]);
   };
 

@@ -11,6 +11,7 @@ export type Todo = {
   id: string;
   message: string;
   completed: boolean;
+  created_at: Date;
 };
 
 export async function getTodos() {
@@ -19,7 +20,7 @@ export async function getTodos() {
   return results as Todo[];
 }
 
-export async function addTodo(message: string): Promise<Todo> {
+export async function createTodo(message: string): Promise<Todo> {
   const sql = getSql();
   const result = await sql`
     INSERT INTO todos (message) 
