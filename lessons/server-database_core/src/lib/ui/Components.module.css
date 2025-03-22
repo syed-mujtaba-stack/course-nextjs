@@ -19,7 +19,7 @@
 }
 
 .todoItem {
-  @apply flex items-center justify-between p-2 pr-0 border-b border-gray-300;
+  @apply flex items-center justify-between p-2 pr-0;
 }
 
 .todoContent {
