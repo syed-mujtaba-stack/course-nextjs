@@ -13,14 +13,24 @@ const DisplayTodo = ({
   onDelete: (id: string) => void;
 }) => {
   return (
-    <li>
-      <input
-        type="checkbox"
-        checked={todo.completed}
-        onChange={(e) => onUpdateCompleted(todo.id, e.target.checked)}
-      />
-      <p>{todo.message}</p>
-      <button onClick={() => onDelete(todo.id)}>❌</button>
+    <li className="flex items-center justify-between p-2 border-b border-gray-300">
+      <div className="flex items-center gap-2">
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          onChange={(e) => onUpdateCompleted(todo.id, e.target.checked)}
+          className="w-4 h-4"
+        />
+        <p className={`text-sm ${todo.completed ? "line-through text-gray-500" : ""}`}>
+          {todo.message}
+        </p>
+      </div>
+      <button
+        onClick={() => onDelete(todo.id)}
+        className="text-red-500 hover:text-red-700"
+      >
+        ❌
+      </button>
     </li>
   );
 };
@@ -50,17 +60,23 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="max-w-md mx-auto mt-8 p-4 bg-white shadow-md rounded-md">
+      <div className="flex gap-2 mb-4">
         <input
           type="text"
           value={newTodoMessage}
           onChange={(e) => setNewTodoMessage(e.target.value)}
-          placeholder="todo..."
+          placeholder="Add a new todo..."
+          className="flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <button onClick={onAddTodo}>Add</button>
+        <button
+          onClick={onAddTodo}
+          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+        >
+          Add
+        </button>
       </div>
-      <ul>
+      <ul className="divide-y divide-gray-200">
         {todos.map((todo) => (
           <DisplayTodo
             key={todo.id}
