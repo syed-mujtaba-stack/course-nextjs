@@ -15,11 +15,11 @@
 }
 
 .todoList {
-  @apply divide-y divide-gray-200;
+  @apply divide-dashed divide-y-2 divide-gray-200 ;
 }
 
 .todoItem {
-  @apply flex items-center justify-between p-2 pr-0;
+  @apply flex items-center justify-between p-3 pr-0;
 }
 
 .todoContent {
