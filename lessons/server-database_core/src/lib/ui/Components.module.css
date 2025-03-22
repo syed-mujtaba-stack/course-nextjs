@@ -27,7 +27,7 @@
 }
 
 .checkbox {
-  @apply w-4 h-4 cursor-pointer;
+  @apply w-5 h-5 cursor-pointer transition-all duration-200;
 }
 
 .todoText {
@@ -39,5 +39,5 @@
 }
 
 .deleteButton {
-  @apply hover:scale-110 hover:bg-red-200 hover:border-white border-red-500 border-2 rounded-md px-2 py-1 transition-all duration-200;
+  @apply text-sm hover:bg-red-200 hover:border-white border-red-500 border-2 rounded-md px-2 py-1 transition-all duration-200;
 }
