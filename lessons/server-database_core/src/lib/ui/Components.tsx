@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { createTodo, deleteTodoById, Todo, updateTodoCompletedById } from "../db";
-import styles from "./TodoComponents.module.css";
+import styles from "./Components.module.css";
 
 const DisplayTodo = ({
   todo,
