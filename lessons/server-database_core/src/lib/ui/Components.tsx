@@ -44,6 +44,14 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
   const [todos, setTodos] = useState(initial);
   const [newTodoMessage, setNewTodoMessage] = useState("");
 
+  const onAddTodo = async () => {
+    const message = newTodoMessage.trim();
+    if (!message) return;
+    setNewTodoMessage("");
+    const todo = await createTodo(message);
+    setTodos((todos) => [...todos, todo]);
+  };
+
   const onUpdateCompleted = async (id: string, completed: boolean) => {
     await updateTodoCompletedById(id, completed);
     setTodos((todos) =>
@@ -54,14 +62,6 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
   const onDelete = async (id: string) => {
     await deleteTodoById(id);
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
-  };
-
-  const onAddTodo = async () => {
-    const message = newTodoMessage.trim();
-    if (!message) return;
-    setNewTodoMessage("");
-    const todo = await createTodo(message);
-    setTodos((todos) => [...todos, todo]);
   };
 
   return (
