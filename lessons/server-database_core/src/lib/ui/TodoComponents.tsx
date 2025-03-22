@@ -61,7 +61,6 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
     if (!message) return;
     setNewTodoMessage("");
     const todo = await createTodo(message);
-    console.log(todo);
     setTodos((todos) => [...todos, todo]);
   };
 
