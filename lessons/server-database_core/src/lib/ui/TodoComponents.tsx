@@ -56,7 +56,7 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
           type="text"
           value={newTodoMessage}
           onChange={(e) => setNewTodoMessage(e.target.value)}
-          placeholder="Add a new todo"
+          placeholder="todo..."
         />
         <button onClick={onAddTodo}>Add</button>
       </div>
