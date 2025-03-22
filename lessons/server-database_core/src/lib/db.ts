@@ -25,7 +25,7 @@ export async function createTodo(message: string): Promise<Todo> {
   const result = await sql`
     INSERT INTO todos (message) 
     VALUES (${message}) 
-    RETURNING id, message, completed
+    RETURNING *
   `;
   return result[0] as Todo;
 }
