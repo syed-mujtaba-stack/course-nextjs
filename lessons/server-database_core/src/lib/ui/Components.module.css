@@ -27,7 +27,7 @@
 }
 
 .todoContent {
-  @apply flex items-center gap-2 cursor-pointer;
+  @apply flex items-center gap-2 cursor-pointer select-none;
 }
 
 .checkbox {
