@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { deleteTodoById, Todo, updateTodoCompletedById } from "../db";
+import { addTodo, deleteTodoById, Todo, updateTodoCompletedById } from "../db";
 
 const DisplayTodo = ({
   todo,
@@ -27,6 +27,7 @@ const DisplayTodo = ({
 
 export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
   const [todos, setTodos] = useState(initial);
+  const [newTodoMessage, setNewTodoMessage] = useState("");
 
   const onUpdateCompleted = async (id: string, completed: boolean) => {
     await updateTodoCompletedById(id, completed);
@@ -40,9 +41,26 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
   };
 
+  const onAddTodo = async () => {
+    const message = newTodoMessage.trim();
+    if (!message) return;
+    setNewTodoMessage("");
+    const todo = await addTodo(message);
+    setTodos((todos) => [...todos, todo]);
+  };
+
   return (
     <div>
       <h1>Todos</h1>
+      <div>
+        <input
+          type="text"
+          value={newTodoMessage}
+          onChange={(e) => setNewTodoMessage(e.target.value)}
+          placeholder="Add a new todo"
+        />
+        <button onClick={onAddTodo}>Add</button>
+      </div>
       <ul>
         {todos.map((todo) => (
           <DisplayTodo
