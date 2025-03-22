@@ -14,8 +14,8 @@
   @apply flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
 }
 
-.addButton {
-  @apply px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all duration-200;
+.createButton {
+  @apply px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition-all duration-200;
 }
 
 .todoList {
@@ -27,19 +27,19 @@
 }
 
 .todoContent {
-  @apply flex items-center gap-2 cursor-pointer select-none text-gray-700;
+  @apply flex items-center gap-2 cursor-pointer select-none text-gray-700 transition-all duration-200 hover:scale-110;
 }
 
 .checkbox {
-  @apply w-5 h-5 cursor-pointer transition-all duration-200 hover:scale-110;
+  @apply w-5 h-5 cursor-pointer;
 }
 
 .todoText {
   @apply text-sm;
 }
 
-.completed {
-  @apply line-through ;
+.todoText.completed {
+  @apply line-through;
 }
 
 .deleteButton {

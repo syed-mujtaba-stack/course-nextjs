@@ -49,7 +49,7 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
   const [todos, setTodos] = useState(initial);
   const [newTodoMessage, setNewTodoMessage] = useState("");
 
-  const onAddTodo = async () => {
+  const onCreateTodo = async () => {
     const message = newTodoMessage.trim();
     if (!message) return;
     setNewTodoMessage("");
@@ -71,15 +71,15 @@ export const DisplayTodos = ({ initial }: { initial: Todo[] }) => {
 
   return (
     <div className={styles.container}>
-      <form action={onAddTodo} className={styles.form}>
+      <form action={onCreateTodo} className={styles.form}>
         <input
           type="text"
           value={newTodoMessage}
           onChange={(e) => setNewTodoMessage(e.target.value)}
-          placeholder="Add a new todo..."
+          placeholder="Todo..."
           className={styles.input}
         />
-        <button className={styles.addButton}>Add</button>
+        <button className={styles.createButton}>Create</button>
       </form>
       <hr className={styles.divider} />
       <ul className={styles.todoList}>
