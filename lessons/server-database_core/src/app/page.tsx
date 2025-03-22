@@ -1,8 +1,8 @@
 import { getTodos } from "@/lib/db";
-import { Todos } from "@/lib/ui/Todos";
+import { DisplayTodos } from "@/lib/ui/TodoComponents";
 
 export default async function Page() {
-  const comments = await getTodos();
+  const todos = await getTodos();
 
-  return <Todos initial={comments} />;
+  return <DisplayTodos initial={todos} />;
 }
