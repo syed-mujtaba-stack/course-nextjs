@@ -27,7 +27,7 @@
 }
 
 .todoContent {
-  @apply flex items-center gap-2 cursor-pointer select-none;
+  @apply flex items-center gap-2 cursor-pointer select-none text-gray-700;
 }
 
 .checkbox {
@@ -39,7 +39,7 @@
 }
 
 .completed {
-  @apply line-through text-gray-500;
+  @apply line-through ;
 }
 
 .deleteButton {
