@@ -3,7 +3,11 @@
 import { Comment } from "../db";
 
 function DisplaySubmittedAt({ submitted_at }: { submitted_at: Date }) {
-  return <p>{submitted_at.toISOString()}</p>;
+  return (
+    <p className="text-xs p-1 bg-gray-700 text-white rounded-md">
+      {submitted_at.getFullYear()}/{submitted_at.getMonth() + 1}
+    </p>
+  );
 }
 
 export const Commentator = ({ initial }: { initial: Comment[] }) => {
