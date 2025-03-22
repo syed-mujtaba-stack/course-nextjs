@@ -1,4 +1,4 @@
-'use server';
+"use server";
 
 import { neon } from "@neondatabase/serverless";
 
@@ -7,28 +7,33 @@ function getSql() {
   return sql;
 }
 
-export type Comment = {
-  comment_id: string;
+export type Todo = {
+  id: string;
   message: string;
-  submitted_at: Date;
+  completed: boolean;
 };
 
-export async function getComments() {
+export async function getTodos() {
   const sql = getSql();
-  const results = await sql`SELECT * FROM comments ORDER BY submitted_at DESC`;
-  return results as Comment[];
+  const results = await sql`SELECT * FROM todos`;
+  return results as Todo[];
 }
 
-export async function addComment(message: string): Promise<Comment> {
+export async function addTodo(message: string): Promise<Todo> {
   const sql = getSql();
   const result = await sql`
-    INSERT INTO comments (message) 
+    INSERT INTO todos (message) 
     VALUES (${message}) 
-    RETURNING comment_id
+    RETURNING id, message, completed
   `;
-  return {
-    comment_id: result[0].comment_id as string,
-    message,
-    submitted_at: new Date(),
-  };
+  return result[0] as Todo;
+}
+
+export async function updateTodo(id: string, completed: boolean) {
+  const sql = getSql();
+  await sql`
+    UPDATE todos
+    SET completed = ${completed}
+    WHERE id = ${id}
+  `;
 }
