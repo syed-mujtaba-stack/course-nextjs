@@ -10,7 +10,6 @@
   @apply w-full h-1 mx-auto bg-blue-400/30 border-0 rounded-md;
 }
 
-
 .input {
   @apply flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
 }
@@ -24,7 +23,7 @@
 }
 
 .todoItem {
-  @apply flex items-center justify-between p-3 pr-0;
+  @apply flex items-center justify-between py-3 px-0;
 }
 
 .todoContent {
