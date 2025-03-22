@@ -39,5 +39,5 @@
 }
 
 .deleteButton {
-  @apply  hover:scale-110 hover:bg-red-200 hover:border-white border-red-500 border-2 rounded-md px-2 py-1 transition-all duration-200 ;
+  @apply hover:scale-110 hover:bg-red-200 hover:border-white border-red-500 border-2 rounded-md px-2 py-1 transition-all duration-200;
 }
