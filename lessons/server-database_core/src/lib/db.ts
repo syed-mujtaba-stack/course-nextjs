@@ -16,7 +16,7 @@ export type Todo = {
 
 export async function getTodos() {
   const sql = getSql();
-  const results = await sql`SELECT * FROM todos`;
+  const results = await sql`SELECT * FROM todos ORDER BY created_at DESC`;
   return results as Todo[];
 }
 
