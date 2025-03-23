@@ -12,8 +12,8 @@ export default function Page() {
         paddingTop: "50px",
       }}
     >
-      <Link href="/server">Server</Link>
-      <Link href="/client">Client</Link>
+      <Link href="/server">Server Side Code</Link>
+      <Link href="/client">Client Side Code</Link>
     </div>
   );
 }
