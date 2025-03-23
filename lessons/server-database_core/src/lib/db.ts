@@ -23,8 +23,8 @@ export async function getTodos() {
 export async function createTodo(message: string): Promise<Todo> {
   const sql = getSql();
   const result = await sql`
-    INSERT INTO todos (message) 
-    VALUES (${message}) 
+    INSERT INTO todos (message)
+    VALUES (${message})
     RETURNING *
   `;
   return result[0] as Todo;

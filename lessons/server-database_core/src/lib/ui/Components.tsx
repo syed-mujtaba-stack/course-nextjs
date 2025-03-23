@@ -1,13 +1,13 @@
 "use client";
 
+import styles from "./Components.module.css";
 import { useState } from "react";
 import {
+  Todo,
   createTodo,
   deleteTodoById,
-  Todo,
   updateTodoCompletedById,
 } from "../db";
-import styles from "./Components.module.css";
 
 const DisplayTodo = ({
   todo,
@@ -22,19 +22,13 @@ const DisplayTodo = ({
     <li className={styles.todoItem}>
       <div
         className={styles.todoContent}
-        onClick={() => onUpdateCompleted(todo.id, !todo.completed)}
-      >
-        <input
-          type="checkbox"
+        onClick={() => onUpdateCompleted(todo.id, !todo.completed)}>
+        <input type="checkbox"
           checked={todo.completed}
           readOnly
           className={styles.checkbox}
         />
-        <p
-          className={`${styles.todoText} ${
-            todo.completed ? styles.completed : ""
-          }`}
-        >
+        <p className={`${styles.todoText} ${todo.completed ? styles.completed : ""}`}>
           {todo.message}
         </p>
       </div>
