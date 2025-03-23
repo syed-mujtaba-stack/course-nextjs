@@ -2,6 +2,6 @@
 
 import { Button } from "@/lib/Button";
 
-export default function Home() {
+export default function Page() {
   return <Button onClick={() => alert("Stop Clicking Me!")}>Click Me!</Button>;
 }
