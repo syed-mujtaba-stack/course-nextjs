@@ -27,7 +27,7 @@
 }
 
 .todoContent {
-  @apply flex items-center gap-2 cursor-pointer select-none text-gray-700 transition-all duration-200 hover:scale-110;
+  @apply flex items-center gap-2 cursor-pointer select-none text-gray-700 transition-all duration-200 hover:scale-105;
 }
 
 .checkbox {
