@@ -5,10 +5,10 @@ export const Nav = () => {
     <nav>
       <ul>
         <li>
-          <Link href="/">Dashboard Home</Link>
+          <Link href="/dashboard">Home</Link>
         </li>
         <li>
-          <Link href="/">About</Link>
+          <Link href="/dashboard/subscriptions">Subscriptions</Link>
         </li>
       </ul>
     </nav>
