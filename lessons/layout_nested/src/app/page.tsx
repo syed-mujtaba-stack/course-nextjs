@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/lib/Button";
+import Link from "next/link";
 
 export default function Page() {
-  return <Button onClick={() => alert("Stop Clicking Me!")}>Click Me!</Button>;
+  return <Link href="/dashboard" className='underline'>Visit the Dashboard</Link>;
 }
