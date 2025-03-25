@@ -1,9 +1,9 @@
-import { Nav } from "@/lib/Nav";
+import { DashboardMenu } from "@/lib/DashboardMenu";
 
 export default function Layout({ children }: React.PropsWithChildren) {
   return (
     <div>
-      <Nav />
+      <DashboardMenu />
       {children}
       <footer>
         © <b>Boolean</b> <i>Art</i>

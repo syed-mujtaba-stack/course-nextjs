@@ -2,24 +2,24 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import styles from "./Nav.module.css";
+import styles from "./DashboardMenu.module.css";
 
-export const Nav = () => {
+export const DashboardMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.menu}>
       <button onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "Close  ▲" : "Open ▼"}
+        Dashboard Menu {isOpen ? "▲" : "▼"}
       </button>
 
       {isOpen && (
         <ul>
           <li>
-            <Link href="/dashboard">Home</Link>
+            <Link href="/dashboard">Home 🏠</Link>
           </li>
           <li>
-            <Link href="/dashboard/subscriptions">Subscriptions</Link>
+            <Link href="/dashboard/subscriptions">Subscriptions 🚀</Link>
           </li>
         </ul>
       )}
