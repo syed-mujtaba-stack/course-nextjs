@@ -8,10 +8,11 @@ export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav>
+    <nav className={styles.nav}>
       <button onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "Close Menu" : "Open Menu"}
+        {isOpen ? "Close  ▲" : "Open ▼"}
       </button>
+
       {isOpen && (
         <ul>
           <li>
