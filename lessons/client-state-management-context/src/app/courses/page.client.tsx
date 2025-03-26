@@ -24,14 +24,14 @@ export default function PageClient({ courses }: { courses: Course[] }) {
                   className={actionButton}
                   onClick={() => cartStore.removeCourse(course)}
                 >
-                  Remove from cart
+                  Remove from cart -
                 </button>
               ) : (
                 <button
                   className={actionButton}
                   onClick={() => cartStore.addCourse(course)}
                 >
-                  Add to cart
+                  Add to cart +
                 </button>
               )}
 
