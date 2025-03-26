@@ -1,9 +1,31 @@
+"use client";
+
+import Link from "next/link";
+import styles from "./page.module.css";
+import { useCartStore } from "@/lib/CartStoreContext";
+
 export default function Page() {
+  const cartStore = useCartStore();
+  const coursesInCart = cartStore.getCoursesInCart();
   return (
-    <div>
-      <h1>Client State Management with Context</h1>
-      <p>Checkout the courses</p>
-      <p>View your cart</p>
+    <div className={styles.root}>
+      <h1 className={styles.heading}>Checkout</h1>
+      {coursesInCart.length === 0 ? (
+        <p className={styles.subheading}>Your cart is empty 📭</p>
+      ) : (
+        <div className={styles.cart}>
+          <p className={styles.subheading}>Courses in Cart 🛒</p>
+          <ul className={styles.list}>
+            {coursesInCart.map((course) => (
+              <li key={course.id}>{course.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <Link className={styles.link} href="/courses">
+        Courses Page
+      </Link>
     </div>
   );
 }

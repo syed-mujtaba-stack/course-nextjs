@@ -9,7 +9,9 @@ const useCreateCartStore = () => {
   });
 
   return {
-    cart,
+    getCoursesInCart: () => {
+      return Array.from(cart.courses.values());
+    },
     isCourseInCart: (course: Course) => {
       return cart.courses.has(course.id);
     },

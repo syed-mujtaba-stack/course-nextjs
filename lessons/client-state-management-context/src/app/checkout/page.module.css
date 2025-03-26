@@ -1,0 +1,23 @@
+.root {
+  @apply max-w-screen-xl mx-auto flex flex-col gap-6 items-center p-5;
+}
+
+.heading {
+  @apply text-3xl font-bold text-yellow-400;
+}
+
+.subheading {
+  @apply text-xl font-semibold;
+}
+
+.link {
+  @apply text-xl text-blue-500 underline underline-offset-1 hover:underline-offset-2 hover:text-red-500 hover:scale-125 transition-all duration-200;
+}
+
+.cart {
+  @apply flex flex-col gap-4;
+}
+
+.list {
+  @apply flex flex-wrap gap-4 justify-center;
+}
