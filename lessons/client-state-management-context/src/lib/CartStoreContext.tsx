@@ -5,28 +5,29 @@ import type { Course, Cart } from "./types";
 
 const useCreateCartStore = () => {
   const [cart, setCart] = useState<Cart>({
-    courses: [],
+    courses: new Map(),
   });
 
   return {
     cart,
     isCourseInCart: (course: Course) => {
-      return cart.courses.some((c) => c.id === course.id);
+      return cart.courses.has(course.id);
     },
     addCourse: (toAdd: Course) => {
       setCart((prevCart) => ({
-        courses: [...prevCart.courses, toAdd],
+        courses: new Map([...prevCart.courses, [toAdd.id, toAdd]]),
       }));
     },
     removeCourse: (toRemove: Course) => {
       setCart((prevCart) => ({
-        ...prevCart,
-        courses: prevCart.courses.filter((course) => course.id !== toRemove.id),
+        courses: new Map(
+          [...prevCart.courses].filter(([id]) => id !== toRemove.id)
+        ),
       }));
     },
     clearCart: () => {
       setCart({
-        courses: [],
+        courses: new Map(),
       });
     },
   };

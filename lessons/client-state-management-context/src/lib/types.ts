@@ -5,5 +5,5 @@ export type Course = {
 };
 
 export type Cart = {
-  courses: ReadonlyArray<Course>;
+  courses: Map<string, Course>;
 };
