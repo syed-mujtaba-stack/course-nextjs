@@ -1,9 +1,7 @@
-export default function Page() {
-  return (
-    <div>
-      <h1>Client State Management with Context</h1>
-      <p>Checkout the courses</p>
-      <p>View your cart</p>
-    </div>
-  );
+import { getCourses } from "@/lib/courses";
+import Client from "./page.client";
+
+export default async function Page() {
+  const courses = await getCourses();
+  return <Client courses={courses} />;
 }

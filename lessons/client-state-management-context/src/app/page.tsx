@@ -1,6 +1,4 @@
-"use client";
-
-export default function Page() {
+export default async function Page() {
   return (
     <div>
       <h1>Client State Management with Context</h1>

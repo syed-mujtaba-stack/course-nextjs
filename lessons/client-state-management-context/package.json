@@ -1,5 +1,5 @@
 {
-  "name": "00_example_tailwind",
+  "name": "client-state-management-context",
   "version": "0.1.0",
   "private": true,
   "scripts": {
