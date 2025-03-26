@@ -3,7 +3,7 @@
 import { Course } from "@/lib/types";
 import { useCartStore } from "@/lib/CartStoreContext";
 
-export default function Client({ courses }: { courses: Course[] }) {
+export default function PageClient({ courses }: { courses: Course[] }) {
   const cartStore = useCartStore();
   return (
     <div>
