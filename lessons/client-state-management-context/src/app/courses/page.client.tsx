@@ -1,8 +1,8 @@
 "use client";
 
+import styles from "./page.client.module.css";
 import { Course } from "@/lib/types";
 import { useCartStore } from "@/lib/CartStoreContext";
-import styles from "./page.client.module.css";
 
 export default function PageClient({ courses }: { courses: Course[] }) {
   const cartStore = useCartStore();
