@@ -3,7 +3,7 @@
 }
 
 .heading {
-  @apply text-3xl font-bold text-fuchsia-500;
+  @apply text-3xl font-bold text-green-500;
 }
 
 .subheading {

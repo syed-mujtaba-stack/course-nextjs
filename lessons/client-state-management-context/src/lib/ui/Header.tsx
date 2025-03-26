@@ -1,5 +1,6 @@
 "use client";
 
+import styles from "./Header.module.css";
 import Link from "next/link";
 import { useCartStore } from "../CartStoreContext";
 
@@ -8,14 +9,19 @@ export const Header = () => {
   const coursesInCart = cartStore.getCoursesInCart();
 
   return (
-    <header>
-      <nav>
-        <Link href="/courses">Courses Page</Link>
-        <Link href="/checkout">Checkout Page</Link>
+    <header className={styles.root}>
+      <nav className={styles.nav}>
+        <Link className={styles.link} href="/courses">
+          Courses Page
+        </Link>
+        <Link className={styles.link} href="/checkout">
+          Checkout Page
+        </Link>
       </nav>
 
       <div>
-        Courses In Cart: <span>{coursesInCart.length}</span>
+        <span className={styles.cartMessage}>Courses In Cart:</span>
+        <span className={styles.cartCount}>{coursesInCart.length}</span>
       </div>
     </header>
   );

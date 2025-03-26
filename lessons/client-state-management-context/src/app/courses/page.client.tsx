@@ -8,7 +8,7 @@ export default function PageClient({ courses }: { courses: Course[] }) {
   const cartStore = useCartStore();
   return (
     <div className={styles.root}>
-      <h1 className={styles.heading}>Professional Courses</h1>
+      <h1 className={styles.heading}>Professional Courses 📚</h1>
       <h2 className={styles.subheading}>
         These courses are designed to accelate your learning 🧠
         <br />
