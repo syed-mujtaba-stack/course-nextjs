@@ -1,11 +1,7 @@
 .root {
-  @apply flex flex-col items-center justify-center h-screen gap-4;
+  @apply flex flex-col items-center p-8;
 }
 
 .heading {
-  @apply text-purple-400 text-3xl;
-}
-
-.link {
-  @apply text-xl text-blue-500 underline underline-offset-1 hover:underline-offset-2 hover:text-red-500 hover:scale-125 transition-all duration-200;
+  @apply text-fuchsia-400 text-6xl font-bold;
 }

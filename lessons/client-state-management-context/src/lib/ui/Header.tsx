@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCartStore } from "../CartStoreContext";
 
 export const Header = () => {
@@ -9,8 +10,8 @@ export const Header = () => {
   return (
     <header>
       <nav>
-        <a href="/courses">Courses Page</a>
-        <a href="/checkout">Checkout Page</a>
+        <Link href="/courses">Courses Page</Link>
+        <Link href="/checkout">Checkout Page</Link>
       </nav>
 
       <div>
