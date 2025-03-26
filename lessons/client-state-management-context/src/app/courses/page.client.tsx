@@ -17,9 +17,15 @@ export default function PageClient({ courses }: { courses: Course[] }) {
         {courses.map((course) => (
           <li key={course.id}>
             {course.title} - {course.description}
-            <button onClick={() => cartStore.addCourse(course)}>
-              Add to Cart
-            </button>
+            {cartStore.isCourseInCart(course) ? (
+              <button onClick={() => cartStore.removeCourse(course)}>
+                Remove from cart
+              </button>
+            ) : (
+              <button onClick={() => cartStore.addCourse(course)}>
+                Add to cart
+              </button>
+            )}
           </li>
         ))}
       </ul>
