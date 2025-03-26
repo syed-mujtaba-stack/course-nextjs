@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Sample App for the BooleanArt NextJS Course",
 };
 
-import { CartProvider } from "@/lib/CartContext";
+import { CartStoreProvider } from "@/lib/CartContext";
 
 export default function RootLayout({
   children,
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CartProvider>{children}</CartProvider>
+        <CartStoreProvider>{children}</CartStoreProvider>
       </body>
     </html>
   );
