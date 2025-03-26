@@ -10,6 +10,9 @@ const useCreateCartStore = () => {
 
   return {
     cart,
+    isCourseInCart: (course: Course) => {
+      return cart.courses.some((c) => c.id === course.id);
+    },
     addCourse: (toAdd: Course) => {
       setCart((prevCart) => ({
         courses: [...prevCart.courses, toAdd],

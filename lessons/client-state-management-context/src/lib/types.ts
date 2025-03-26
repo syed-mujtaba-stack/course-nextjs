@@ -1,9 +1,9 @@
 export type Course = {
-  id: string,
-  title: string,
-  description: string,
-}
+  id: string;
+  title: string;
+  description: string;
+};
 
 export type Cart = {
-  courses: ReadonlyArray<Course>,
-}
+  courses: ReadonlyArray<Course>;
+};
