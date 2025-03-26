@@ -2,7 +2,7 @@
 
 import { Course } from "@/lib/types";
 import { useCartStore } from "@/lib/CartStoreContext";
-import styles from "./page.client.module.css";
+import styles, { actionButton } from "./page.client.module.css";
 
 export default function PageClient({ courses }: { courses: Course[] }) {
   const cartStore = useCartStore();
@@ -20,11 +20,17 @@ export default function PageClient({ courses }: { courses: Course[] }) {
             <img src={`/images/${course.id}.png`} alt={course.title} />
             <div className={styles.courseDetails}>
               {cartStore.isCourseInCart(course) ? (
-                <button onClick={() => cartStore.removeCourse(course)}>
+                <button
+                  className={actionButton}
+                  onClick={() => cartStore.removeCourse(course)}
+                >
                   Remove from cart
                 </button>
               ) : (
-                <button onClick={() => cartStore.addCourse(course)}>
+                <button
+                  className={actionButton}
+                  onClick={() => cartStore.addCourse(course)}
+                >
                   Add to cart
                 </button>
               )}

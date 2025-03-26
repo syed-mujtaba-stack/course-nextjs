@@ -25,3 +25,9 @@
 .courseTitle {
   @apply text-xl font-semibold;
 }
+
+.actionButton {
+  @apply bg-blue-600 hover:bg-blue-500 text-white;
+  @apply shadow-md shadow-black hover:shadow-blue-800;
+  @apply hover:scale-110 px-4 py-2 rounded-md  transition-all duration-200;
+}
