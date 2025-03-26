@@ -29,16 +29,16 @@ const useCartStore = () => {
   };
 };
 
-export const CartContext = createContext<ReturnType<
-  typeof useCartStore
-> | null>(null);
+export type Store = ReturnType<typeof useCartStore>;
+
+const CartContext = createContext<Store | null>(null);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const store = useCartStore();
   return <CartContext.Provider value={store}>{children}</CartContext.Provider>;
 };
 
-export const useCart = () => {
+export const useCart = (): Store => {
   const cart = use(CartContext);
   if (!cart) {
     throw new Error("useCart must be used within a CartProvider");
