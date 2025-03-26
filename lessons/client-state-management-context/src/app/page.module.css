@@ -3,7 +3,7 @@
 }
 
 .heading {
-  @apply text-purple-500 text-3xl;
+  @apply text-purple-400 text-3xl;
 }
 
 .link {

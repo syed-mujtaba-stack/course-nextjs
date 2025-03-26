@@ -3,11 +3,11 @@
 }
 
 .heading {
-  @apply text-3xl font-bold text-purple-500;
+  @apply text-3xl font-bold text-purple-400;
 }
 
 .subheading {
-  @apply text-xl font-semibold text-blue-500;
+  @apply text-xl font-semibold;
 }
 
 .list {
