@@ -14,9 +14,9 @@ export default function PageClient({ courses }: { courses: Course[] }) {
         <br />
         We value your time because you have better things to do 💪🏻
       </h2>
-      <ul className={styles.coursesList}>
+      <ul className={styles.list}>
         {courses.map((course) => (
-          <li key={course.id} className={styles.courseListItem}>
+          <li key={course.id} className={styles.course}>
             <img src={`/images/${course.id}.png`} alt={course.title} />
             <div className={styles.courseDetails}>
               {cartStore.isCourseInCart(course) ? (

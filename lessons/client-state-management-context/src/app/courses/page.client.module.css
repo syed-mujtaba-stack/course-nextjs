@@ -1,5 +1,5 @@
 .root {
-  @apply max-w-screen-xl mx-auto flex flex-col gap-4 items-center p-5;
+  @apply max-w-screen-xl mx-auto flex flex-col gap-6 items-center p-5;
 }
 
 .heading {
@@ -10,12 +10,12 @@
   @apply text-xl font-semibold text-blue-500;
 }
 
-.coursesList {
+.list {
   @apply flex flex-wrap gap-4 justify-center;
 }
 
-.courseListItem {
-  @apply flex flex-col gap-2 items-center bg-gray-600 rounded-md w-96 text-white overflow-hidden shadow-lg shadow-gray-800;
+.course {
+  @apply flex flex-col gap-2 items-center bg-gradient-to-br from-slate-500 to-slate-800 rounded-md w-96 text-white overflow-hidden shadow-lg shadow-gray-800;
 }
 
 .courseDetails {

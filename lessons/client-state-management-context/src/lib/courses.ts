@@ -17,7 +17,7 @@ const courses: Course[] = [
     id: "react",
     title: "Professional React",
     description:
-      "ReactJS is at the center of the modern web development universe ⚫️. This course presents the core API and concepts so you can start creating React Applications and being productive with this amazing framework ⚛️",
+      "ReactJS is at the center of the modern web development universe. This course presents the core API and concepts so you can start creating React Applications and being productive with this amazing framework ⚛️",
   },
   {
     id: "nextjs",
