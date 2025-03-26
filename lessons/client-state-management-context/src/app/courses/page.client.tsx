@@ -2,30 +2,36 @@
 
 import { Course } from "@/lib/types";
 import { useCartStore } from "@/lib/CartStoreContext";
+import styles from "./page.client.module.css";
 
 export default function PageClient({ courses }: { courses: Course[] }) {
   const cartStore = useCartStore();
   return (
-    <div>
-      <h1>Checkout the courses</h1>
-      <p>
+    <div className={styles.root}>
+      <h1 className={styles.heading}>Professional Courses</h1>
+      <h2 className={styles.subheading}>
         These courses are designed to accelate your learning 🧠
         <br />
         We value your time because you have better things to do 💪🏻
-      </p>
-      <ul>
+      </h2>
+      <ul className={styles.coursesList}>
         {courses.map((course) => (
-          <li key={course.id}>
-            {course.title} - {course.description}
-            {cartStore.isCourseInCart(course) ? (
-              <button onClick={() => cartStore.removeCourse(course)}>
-                Remove from cart
-              </button>
-            ) : (
-              <button onClick={() => cartStore.addCourse(course)}>
-                Add to cart
-              </button>
-            )}
+          <li key={course.id} className={styles.courseListItem}>
+            <img src={`/images/${course.id}.png`} alt={course.title} />
+            <div className={styles.courseDetails}>
+              {cartStore.isCourseInCart(course) ? (
+                <button onClick={() => cartStore.removeCourse(course)}>
+                  Remove from cart
+                </button>
+              ) : (
+                <button onClick={() => cartStore.addCourse(course)}>
+                  Add to cart
+                </button>
+              )}
+
+              <h3 className={styles.courseTitle}>{course.title}</h3>
+              <p>{course.description}</p>
+            </div>
           </li>
         ))}
       </ul>

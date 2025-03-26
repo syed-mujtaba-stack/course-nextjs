@@ -1,0 +1,27 @@
+.root {
+  @apply max-w-screen-xl mx-auto flex flex-col gap-4 items-center p-5;
+}
+
+.heading {
+  @apply text-3xl font-bold;
+}
+
+.subheading {
+  @apply text-xl font-semibold;
+}
+
+.coursesList {
+  @apply flex flex-wrap gap-4 justify-center;
+}
+
+.courseListItem {
+  @apply flex flex-col gap-2 items-center bg-gray-600 rounded-md w-96 text-white overflow-hidden shadow-lg shadow-gray-800;
+}
+
+.courseDetails {
+  @apply flex flex-col gap-4 items-center p-4;
+}
+
+.courseTitle {
+  @apply text-xl font-semibold;
+}
