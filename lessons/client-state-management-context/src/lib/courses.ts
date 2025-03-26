@@ -27,6 +27,11 @@ const courses: Course[] = [
   },
 ];
 
+/** 
+ * Mock Implementation
+ * We would load this from an external data service
+ * Here we have it hardcoded into the sourcecode
+ **/
 export async function getCourses() {
   return courses;
 }
