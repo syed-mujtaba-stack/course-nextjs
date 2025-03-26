@@ -3,7 +3,7 @@
 import { createContext, use, useState } from "react";
 import type { Course, Cart } from "./types";
 
-const useCartStore = () => {
+const useCartStoreCreator = () => {
   const [cart, setCart] = useState<Cart>({
     courses: [],
   });
@@ -29,16 +29,16 @@ const useCartStore = () => {
   };
 };
 
-export type Store = ReturnType<typeof useCartStore>;
+export type CartStore = ReturnType<typeof useCartStoreCreator>;
 
-const CartContext = createContext<Store | null>(null);
+const CartContext = createContext<CartStore | null>(null);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const store = useCartStore();
+  const store = useCartStoreCreator();
   return <CartContext.Provider value={store}>{children}</CartContext.Provider>;
 };
 
-export const useCart = (): Store => {
+export const useCartStore = (): CartStore => {
   const cart = use(CartContext);
   if (!cart) {
     throw new Error("useCart must be used within a CartProvider");
