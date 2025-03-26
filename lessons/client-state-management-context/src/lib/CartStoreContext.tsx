@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, PropsWithChildren, use, useState } from "react";
 import type { Course, Cart } from "./types";
+import { createContext, PropsWithChildren, use, useState } from "react";
 
 const useCreateCartStore = () => {
   const [cart, setCart] = useState<Cart>({
@@ -10,7 +10,7 @@ const useCreateCartStore = () => {
 
   return {
     getCoursesInCart: () => {
-      return Array.from(cart.courses.values());
+      return [...cart.courses.values()];
     },
     isCourseInCart: (course: Course) => {
       return cart.courses.has(course.id);
@@ -49,9 +49,9 @@ export const CartStoreProvider = ({ children }: PropsWithChildren) => {
 };
 
 export const useCartStore = (): CartStore => {
-  const cart = use(CartStoreContext);
-  if (!cart) {
-    throw new Error("useCartStore must be used within a CartProvider");
+  const cartStore = use(CartStoreContext);
+  if (!cartStore) {
+    throw new Error("useCartStore must be used within a CartStoreProvider");
   }
-  return cart;
+  return cartStore;
 };
