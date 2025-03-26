@@ -3,11 +3,11 @@
 }
 
 .heading {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-bold text-purple-500;
 }
 
 .subheading {
-  @apply text-xl font-semibold;
+  @apply text-xl font-semibold text-blue-500;
 }
 
 .coursesList {
