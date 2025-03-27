@@ -1,11 +1,11 @@
 "use client";
 
-import type { Course, Cart } from "./types";
+import type { Course } from "./types";
 import { createContext, PropsWithChildren, use, useState } from "react";
 
 const useCreateCartStore = () => {
-  const [cart, setCart] = useState<Cart>({
-    courses: new Map(),
+  const [cart, setCart] = useState({
+    courses: new Map<string, Course>(),
   });
 
   return {
