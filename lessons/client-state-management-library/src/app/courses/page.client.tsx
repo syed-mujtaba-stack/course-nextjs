@@ -6,7 +6,7 @@ import { useCartStore } from "@/lib/CartStoreContext";
 
 export default function PageClient({ courses }: { courses: Course[] }) {
   const cartStore = useCartStore();
-  const coursesInCart = cartStore.useCoursesInCartMap();
+  const cartMap = cartStore.useCoursesInCartMap();
   return (
     <div className={styles.root}>
       <h1 className={styles.heading}>Professional Courses 📚</h1>
@@ -20,7 +20,7 @@ export default function PageClient({ courses }: { courses: Course[] }) {
           <li key={course.id} className={styles.course}>
             <img src={`/images/${course.id}.png`} alt={course.title} />
             <div className={styles.courseDetails}>
-              {coursesInCart.has(course.id) ? (
+              {cartMap.has(course.id) ? (
                 <button
                   className={styles.secondaryButton}
                   onClick={() => cartStore.actions.removeCourse(course)}
