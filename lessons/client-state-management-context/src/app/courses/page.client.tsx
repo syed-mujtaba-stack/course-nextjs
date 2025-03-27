@@ -34,7 +34,6 @@ export default function PageClient({ courses }: { courses: Course[] }) {
                   Add to cart +
                 </button>
               )}
-
               <h3 className={styles.courseTitle}>{course.title}</h3>
               <p>{course.description}</p>
             </div>
