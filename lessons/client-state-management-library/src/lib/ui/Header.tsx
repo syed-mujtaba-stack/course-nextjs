@@ -6,7 +6,7 @@ import { useCartStore } from "../CartStoreContext";
 
 export const Header = () => {
   const cartStore = useCartStore();
-  const coursesInCart = cartStore.getCoursesInCart();
+  const coursesInCart = cartStore.useCoursesInCartArray();
 
   return (
     <header className={styles.root}>

@@ -1,36 +1,40 @@
 "use client";
 
 import type { Course } from "./types";
-import { createContext, PropsWithChildren, use, useState } from "react";
+import { createContext, PropsWithChildren, use } from "react";
+import { proxy, useSnapshot } from "valtio";
+import { proxyMap } from 'valtio/utils'
 
 const useCreateCartStore = () => {
-  const [cart, setCart] = useState({
-    courses: new Map<string, Course>(),
+  const state = proxy({
+    courses: proxyMap<string, Course>(),
   });
 
+  /**
+   * Features to return:
+   * - array of courses in cart
+   * - ability to efficiently see if a course is in the cart
+   * - actions: add, remove, clear
+   */
   return {
-    getCoursesInCart: () => {
-      return [...cart.courses.values()];
+    useCoursesInCartArray: () => {
+      const snapshot = useSnapshot(state);
+      return [...snapshot.courses.values()];
     },
-    isCourseInCart: (course: Course) => {
-      return cart.courses.has(course.id);
+    useCoursesInCartMap: () => {
+      const snapshot = useSnapshot(state);
+      return snapshot.courses;
     },
-    addCourse: (toAdd: Course) => {
-      setCart((prevCart) => ({
-        courses: new Map([...prevCart.courses, [toAdd.id, toAdd]]),
-      }));
-    },
-    removeCourse: (toRemove: Course) => {
-      setCart((prevCart) => ({
-        courses: new Map(
-          [...prevCart.courses].filter(([id]) => id !== toRemove.id)
-        ),
-      }));
-    },
-    clearCart: () => {
-      setCart({
-        courses: new Map(),
-      });
+    actions: {
+      addCourse: (toAdd: Course) => {
+        state.courses.set(toAdd.id, toAdd);
+      },
+      removeCourse: (toRemove: Course) => {
+        state.courses.delete(toRemove.id);
+      },
+      clearCart: () => {
+        state.courses.clear();
+      },
     },
   };
 };

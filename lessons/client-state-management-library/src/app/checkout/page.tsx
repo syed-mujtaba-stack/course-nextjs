@@ -5,7 +5,7 @@ import { useCartStore } from "@/lib/CartStoreContext";
 
 export default function Page() {
   const cartStore = useCartStore();
-  const coursesInCart = cartStore.getCoursesInCart();
+  const coursesInCart = cartStore.useCoursesInCartArray();
 
   return (
     <div className={styles.root}>
@@ -22,7 +22,7 @@ export default function Page() {
           </ul>
           <button
             className={styles.secondaryButton}
-            onClick={() => cartStore.clearCart()}
+            onClick={() => cartStore.actions.clearCart()}
           >
             Clear Cart
           </button>
