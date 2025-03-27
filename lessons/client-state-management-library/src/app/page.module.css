@@ -1,0 +1,11 @@
+.root {
+  @apply flex flex-col items-center p-8 gap-8;
+}
+
+.heading {
+  @apply text-fuchsia-400 text-6xl font-bold;
+}
+
+.subheading {
+  @apply text-3xl font-semibold;
+}

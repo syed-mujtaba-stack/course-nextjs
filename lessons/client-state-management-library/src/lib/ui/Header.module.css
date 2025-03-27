@@ -1,0 +1,20 @@
+.root {
+  @apply bg-gradient-to-b from-gray-900 to-gray-800 p-4;
+  @apply flex flex-row justify-between;
+}
+
+.nav {
+  @apply flex flex-row gap-8;
+}
+
+.link {
+  @apply text-xl text-white underline font-bold underline-offset-1 hover:underline-offset-4  hover:scale-110 transition-all duration-200;
+}
+
+.cartMessage {
+  @apply text-sm font-bold m-2;
+}
+
+.cartCount {
+  @apply text-xl font-extrabold;
+}
