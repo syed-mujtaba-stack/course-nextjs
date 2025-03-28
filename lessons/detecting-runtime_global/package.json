@@ -7,7 +7,7 @@
     "build": "npm run css.build && next build",
     "start": "next start",
     "lint": "next lint",
-    "css.dev": "npm run css.build -- --watch",
+    "css.dev": "npm run css.build -- --watch -s",
     "css.build": "tcm -p 'src/**/*.module.css'"
   },
   "dependencies": {
