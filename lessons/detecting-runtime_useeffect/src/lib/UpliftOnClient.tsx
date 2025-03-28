@@ -6,7 +6,8 @@ export default function UpliftOnClient() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Runs only on the client
+    // Runs only on the client
+    setIsClient(true);
   }, []);
 
   return <div>{isClient ? "Client-side" : "Server-side"}</div>;
