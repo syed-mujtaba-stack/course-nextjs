@@ -4,11 +4,8 @@ export default function Page() {
   return (
     <div className={styles.root}>
       <h1 className={styles.title}>Pick an example</h1>
-      <ExampleLink href="/server">Render on Server Only</ExampleLink>
-      <ExampleLink href="/client">Render on Client Only</ExampleLink>
-      <ExampleLink href="/hydrate">
-        Render on Server and Hydrate on Client
-      </ExampleLink>
+      <ExampleLink href="/static">Static Page</ExampleLink>
+      <ExampleLink href="/dynamic">Dynamic Page</ExampleLink>
     </div>
   );
 }
