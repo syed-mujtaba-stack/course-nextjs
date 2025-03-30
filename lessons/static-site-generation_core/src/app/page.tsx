@@ -4,8 +4,8 @@ export default function Page() {
   return (
     <div className={styles.root}>
       <h1 className={styles.title}>Pick an example</h1>
-      <ExampleLink href="/static">Static Page</ExampleLink>
-      <ExampleLink href="/dynamic">Dynamic Page</ExampleLink>
+      <ExampleLink href="/static">SSG Page</ExampleLink>
+      <ExampleLink href="/dynamic">SSR Page</ExampleLink>
     </div>
   );
 }

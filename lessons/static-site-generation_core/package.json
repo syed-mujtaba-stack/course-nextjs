@@ -1,5 +1,5 @@
 {
-  "name": "static-site-generation-examples",
+  "name": "static-site-generation_core",
   "version": "0.1.0",
   "private": true,
   "scripts": {
