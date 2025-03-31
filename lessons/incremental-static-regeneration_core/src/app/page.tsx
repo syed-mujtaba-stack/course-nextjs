@@ -16,7 +16,7 @@ const ExampleLink = (props: React.PropsWithChildren<{ href: string }>) => {
   return (
     <div>
       👉🏻{" "}
-      <Link className={styles.link} href={props.href}>
+      <Link className={styles.link} href={props.href} prefetch={false}>
         {props.children}
       </Link>
     </div>
