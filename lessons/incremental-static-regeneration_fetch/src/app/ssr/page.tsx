@@ -1,12 +1,10 @@
 export default async function Page() {
+  console.log("Rendering SSR page...");
+
   const content = await fetch(process.env.NEXT_PUBLIC_API_URL + "/content", {
     cache: "no-store",
   });
 
-  console.log("Rendering SSR page...");
-
-  const json = await content.json();
-  const message = json.message;
-
+  const { message } = await content.json();
   return <div>{message}</div>;
 }
