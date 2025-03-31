@@ -21,3 +21,13 @@ export default async function Page({
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/products");
+
+  const { productNames } = (await response.json()) as {
+    productNames: string[];
+  };
+
+  return productNames.map((name) => ({ name }));
+}
