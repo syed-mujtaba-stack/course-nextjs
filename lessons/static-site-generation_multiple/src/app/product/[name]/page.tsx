@@ -1,3 +1,5 @@
+import styles from "./page.module.css";
+
 export default async function Page({
   params,
 }: {
@@ -12,10 +14,10 @@ export default async function Page({
   const { title, icon, description } = details;
 
   return (
-    <div className="flex flex-col p-2 gap-4">
-      <aside className="text-6xl mb-4">{icon}</aside>
-      <h1 className="text-3xl font-bold mb-2">{title}</h1>
-      <p className="text-xl">{description}</p>
+    <div className={styles.root}>
+      <aside className={styles.icon}>{icon}</aside>
+      <h1 className={styles.title}>{title}</h1>
+      <p className={styles.description}>{description}</p>
     </div>
   );
 }
