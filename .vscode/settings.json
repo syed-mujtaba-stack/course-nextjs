@@ -1,3 +1,4 @@
 {
-  "css.lint.validProperties": ["composes"]
+  "css.lint.validProperties": ["composes"],
+  "rest-client.previewOption": "body"
 }

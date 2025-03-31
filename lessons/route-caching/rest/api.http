@@ -1,0 +1,11 @@
+###
+POST http://localhost:3000/api/always
+
+###
+GET http://localhost:3000/api/get/always
+
+###
+GET http://localhost:3000/api/get/once
+
+###
+GET http://localhost:3000/api/get/revalidate
