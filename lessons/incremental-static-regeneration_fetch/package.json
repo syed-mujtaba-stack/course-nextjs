@@ -1,5 +1,5 @@
 {
-  "name": "incremental-static-regeneration_core",
+  "name": "incremental-static-regeneration_fetch",
   "version": "0.1.0",
   "private": true,
   "scripts": {
