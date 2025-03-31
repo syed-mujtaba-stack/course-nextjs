@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+// Since this file exports a `POST`, the `dynamic` option will have no effect
 export const dynamic = "force-static";
 
 export async function GET() {
