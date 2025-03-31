@@ -1,12 +1,13 @@
 .root {
-  @apply flex flex-col gap-4;
+  @apply flex flex-col gap-4 p-2;
 }
 
 .title {
-  @apply text-2xl font-bold text-fuchsia-400;
+  @apply text-3xl font-bold text-fuchsia-400;
 }
 
 .link {
+  @apply text-2xl;
   @apply transition-all duration-300;
   @apply text-blue-400 hover:text-blue-300;
   @apply underline underline-offset-4 hover:underline-offset-8;

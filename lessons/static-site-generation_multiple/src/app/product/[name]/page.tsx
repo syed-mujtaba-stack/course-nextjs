@@ -12,10 +12,10 @@ export default async function Page({
   const { title, icon, description } = details;
 
   return (
-    <div>
-      <aside>{icon}</aside>
-      <h1>{title}</h1>
-      <p>{description}</p>
+    <div className="flex flex-col p-2 gap-4">
+      <aside className="text-6xl mb-4">{icon}</aside>
+      <h1 className="text-3xl font-bold mb-2">{title}</h1>
+      <p className="text-xl">{description}</p>
     </div>
   );
 }
