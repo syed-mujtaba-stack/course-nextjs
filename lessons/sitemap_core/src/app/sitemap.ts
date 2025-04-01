@@ -8,10 +8,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: "/",
+      url: "",
     },
     ...productNames.map((name) => ({
       url: `/product/${name}`,
     })),
-  ];
+  ].map((route: MetadataRoute.Sitemap[number]) => ({
+    ...route,
+    url: "https://booleanart.com" + route.url,
+  }));
 }
