@@ -1,24 +1,17 @@
-import type { MetadataRoute } from 'next'
- 
-export default function sitemap(): MetadataRoute.Sitemap {
+import type { MetadataRoute } from "next";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/products");
+  const { productNames } = (await response.json()) as {
+    productNames: string[];
+  };
+
   return [
     {
-      url: 'https://acme.com',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
+      url: "/",
     },
-    {
-      url: 'https://acme.com/about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://acme.com/blog',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-  ]
+    ...productNames.map((name) => ({
+      url: `/product/${name}`,
+    })),
+  ];
 }
