@@ -1,0 +1,12 @@
+.root {
+  @apply flex flex-col gap-4 items-center;
+}
+
+.title {
+  @apply text-2xl font-bold text-fuchsia-400;
+}
+
+.paragraph {
+  @apply text-lg;
+}
+
