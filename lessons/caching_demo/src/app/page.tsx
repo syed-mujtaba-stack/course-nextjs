@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 
 export default async function Page() {
-  const response = await fetch("http://localhost:3000/api/random");
+  const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/random");
   const { randomNumber } = await response.json();
   return (
     <div className={styles.root}>
