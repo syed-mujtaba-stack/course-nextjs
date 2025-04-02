@@ -8,6 +8,8 @@ export const Nav = () => {
       <ExampleLink href="/">Home</ExampleLink>
       <ExampleLink href="/about">About</ExampleLink>
       <ExampleLink href="/contact">Contact</ExampleLink>
+      <ExampleLink href="/dashboard/security">Security</ExampleLink>
+      <ExampleLink href="/dashboard/subscription">Subscription</ExampleLink>
     </nav>
   );
 };
