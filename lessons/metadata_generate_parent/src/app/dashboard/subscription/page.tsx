@@ -1,5 +1,4 @@
 import { SimpleContentProps, SimpleContent } from "@/lib/SimpleContent";
-import { Metadata } from "next";
 
 const content: SimpleContentProps = {
   title: "Subscription Settings",
@@ -7,7 +6,7 @@ const content: SimpleContentProps = {
   description: "Manage your subscription settings and preferences here. 📅",
 };
 
-export const metadata: Metadata = {
+export const metadata = {
   title: content.title + " | Dashboard",
 };
 

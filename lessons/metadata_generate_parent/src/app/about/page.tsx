@@ -2,13 +2,15 @@ import { SimpleContentProps, SimpleContent } from "@/lib/SimpleContent";
 import { Metadata } from "next";
 
 const content: SimpleContentProps = {
-  title: "Subscription Settings",
-  icon: "💳",
-  description: "Manage your subscription settings and preferences here. 📅",
+  title: "About",
+  icon: "📝",
+  description:
+    "Learn more about us and our mission to provide the best products! 🌟",
 };
 
 export const metadata: Metadata = {
-  title: content.title + " | Dashboard",
+  title: content.title,
+  description: content.description,
 };
 
 export default async function Page() {
