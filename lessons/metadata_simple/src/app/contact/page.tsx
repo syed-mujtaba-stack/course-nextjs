@@ -1,5 +1,5 @@
 import { SimpleContentProps, SimpleContent } from "@/lib/SimpleContent";
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 const content: SimpleContentProps = {
   title: "Contact",
