@@ -1,13 +1,18 @@
+import { fetchPageIdAndTitles } from "@/api/cms";
 import styles from "./Nav.module.css";
 
 import Link from "next/link";
 
-export const Nav = () => {
+export const Nav = async () => {
+  const pages = await fetchPageIdAndTitles();
   return (
     <nav className={styles.nav}>
       <ExampleLink href="/">Home</ExampleLink>
-      <ExampleLink href="/about">About</ExampleLink>
-      <ExampleLink href="/contact">Contact</ExampleLink>
+      {pages.map((page) => (
+        <ExampleLink href={`/${page.id}`} key={page.id}>
+          {page.title}
+        </ExampleLink>
+      ))}
     </nav>
   );
 };
