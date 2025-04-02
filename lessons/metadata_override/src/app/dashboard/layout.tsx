@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export const metadata = {
   title: "Dashboard",
   description: "Manage your user settings and preferences",
