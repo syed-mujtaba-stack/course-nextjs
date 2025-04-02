@@ -1,12 +1,12 @@
-import styles from "./Product.module.css";
+import styles from "./SimpleContent.module.css";
 
-export type ProductProps = {
+export type SimpleContentProps = {
   title: string;
   icon: string;
   description: string;
 };
 
-export function Product(product: ProductProps) {
+export function SimpleContent(product: SimpleContentProps) {
   const { title, icon, description } = product;
 
   return (
