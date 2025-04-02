@@ -1,6 +1,6 @@
 import { fetchPageContent } from "@/api/cms";
 import { SimpleContent } from "@/lib/SimpleContent";
-import { Metadata } from "next";
+import { type Metadata } from "next";
 
 export async function generateMetadata({
   params,

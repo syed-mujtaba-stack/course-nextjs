@@ -9,7 +9,7 @@ export const Nav = async () => {
     <nav className={styles.nav}>
       <ExampleLink href="/">Home</ExampleLink>
       {pages.map((page) => (
-        <ExampleLink href={`/${page.id}`} key={page.id}>
+        <ExampleLink href={`/cms/${page.id}`} key={page.id}>
           {page.title}
         </ExampleLink>
       ))}
