@@ -1,4 +1,5 @@
 import { SimpleContentProps, SimpleContent } from "@/lib/SimpleContent";
+import { Metadata } from 'next';
 
 const content: SimpleContentProps = {
   title: "Security Settings",
@@ -6,7 +7,7 @@ const content: SimpleContentProps = {
   description: "Manage your security settings and preferences here. 🔐",
 };
 
-export const metadata = {
+export const metadata: Metadata = {
   title: content.title + " | Dashboard",
 };
 
