@@ -13,7 +13,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { title } = await parent;
   return {
-    title: content.title + ' | ' + title,
+    title: content.title + ' | ' + title?.absolute,
   };
 }
 
