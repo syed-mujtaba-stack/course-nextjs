@@ -1,10 +1,11 @@
 import { SimpleContentProps, SimpleContent } from "@/lib/SimpleContent";
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 const content: SimpleContentProps = {
-  title: "Contact",
-  icon: "☎️",
-  description: "Get in touch with us for any inquiries or support! 📧",
+  title: "About",
+  icon: "📝",
+  description:
+    "Learn more about us and our mission to provide the best products! 🌟",
 };
 
 export const metadata: Metadata = {
