@@ -6,6 +6,10 @@ const content: SimpleContentProps = {
   description: "Manage your security settings and preferences here. 🔐",
 };
 
+export const metadata = {
+  title: content.title + " | Dashboard",
+};
+
 export default async function Page() {
   return <SimpleContent {...content} />;
 }

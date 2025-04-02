@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Dashboard",
-  description: "User Dashboard",
+  description: "Manage your user settings and preferences",
 };
 
 export default function Layout({ children }: React.PropsWithChildren) {
