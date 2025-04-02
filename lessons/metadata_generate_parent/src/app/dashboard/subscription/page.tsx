@@ -1,5 +1,5 @@
 import { SimpleContentProps, SimpleContent } from "@/lib/SimpleContent";
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 
 const content: SimpleContentProps = {
   title: "Subscription Settings",
@@ -7,9 +7,15 @@ const content: SimpleContentProps = {
   description: "Manage your subscription settings and preferences here. 📅",
 };
 
-export const metadata: Metadata = {
-  title: content.title + " | Dashboard",
-};
+export async function generateMetadata(
+  _: unknown,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { title } = await parent;
+  return {
+    title: content.title + " ◄ " + title?.absolute,
+  };
+}
 
 export default async function Page() {
   return <SimpleContent {...content} />;

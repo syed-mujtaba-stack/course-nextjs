@@ -1,5 +1,5 @@
 {
-  "name": "metadata_override",
+  "name": "metadata_generate_parent",
   "version": "0.1.0",
   "private": true,
   "scripts": {
