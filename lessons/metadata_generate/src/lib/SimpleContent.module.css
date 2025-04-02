@@ -1,0 +1,15 @@
+.root {
+  @apply flex flex-col p-2 gap-4
+}
+
+.icon {
+  @apply text-6xl mb-4;
+}
+
+.title {
+  @apply text-3xl font-bold mb-2;
+}
+
+.description {
+  @apply text-xl;
+}
