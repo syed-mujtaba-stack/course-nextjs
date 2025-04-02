@@ -1,4 +1,10 @@
 import styles from "./page.module.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to our home page",
+};
 
 export default function Page() {
   return (

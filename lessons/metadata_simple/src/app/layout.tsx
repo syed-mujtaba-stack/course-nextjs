@@ -3,7 +3,7 @@ import "./globals.css";
 import { Nav } from '@/lib/Nav';
 
 export const metadata: Metadata = {
-  title: "BooleanArt NextJS App",
+  title: "Website",
   description: "Sample App for the BooleanArt NextJS Course",
 };
 
