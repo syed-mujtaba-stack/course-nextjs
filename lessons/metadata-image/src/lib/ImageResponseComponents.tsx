@@ -78,7 +78,7 @@ export const ImageResponsePlaceAtXY = ({
 
 import path from "path";
 import { promises as fs } from "fs";
-import { CSSProperties } from 'react';
+import { CSSProperties } from "react";
 export async function localImageToSrc(localPath: string): Promise<string> {
   const imageBuffer = await fs.readFile(path.resolve(localPath));
   const base64ImageSrc = `data:image/png;base64,${imageBuffer.toString(
@@ -86,3 +86,94 @@ export async function localImageToSrc(localPath: string): Promise<string> {
   )}`;
   return base64ImageSrc;
 }
+
+export const ImageResponseOverlay = ({
+  children,
+  top,
+  right,
+  bottom,
+  left,
+  style,
+}: React.PropsWithChildren<{
+  style?: CSSProperties;
+  top: CSSProperties["top"];
+  right: CSSProperties["right"];
+  bottom: CSSProperties["bottom"];
+  left: CSSProperties["left"];
+}>) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        position: "absolute",
+        top,
+        right,
+        bottom,
+        left,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const ImageResponseRow = ({
+  children,
+  gap,
+  style,
+}: React.PropsWithChildren<{
+  gap?: CSSProperties["gap"];
+  style?: CSSProperties;
+}>) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        gap,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const ImageResponseColumn = ({
+  children,
+  gap,
+  style,
+}: React.PropsWithChildren<{
+  gap?: CSSProperties["gap"];
+  style?: CSSProperties;
+}>) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const ImageResponseText = ({
+  children,
+  style,
+}: React.PropsWithChildren<{ style?: CSSProperties }>) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+};

@@ -1,8 +1,11 @@
 import {
-  ImageResponsePlaceAtXY,
   ImageResponseFullBackgroundImg,
   ImageResponseRoot,
   localImageToSrc,
+  ImageResponseRow,
+  ImageResponseOverlay,
+  ImageResponseText,
+  ImageResponseColumn,
 } from "@/lib/ImageResponseComponents";
 import { ImageResponse } from "next/og";
 import {
@@ -27,23 +30,38 @@ export async function GET(
         <ImageResponseFullBackgroundImg
           src={await localImageToSrc("./public/images/metadata-background.png")}
         />
-        <ImageResponsePlaceAtXY x={50} y={100} style={{ fontSize: 60 }}>
-          {product.icon}
-        </ImageResponsePlaceAtXY>
-        <ImageResponsePlaceAtXY
-          x={140}
-          y={80}
-          style={{ fontSize: 90, color: "white", fontFamily: fontFredoka }}
+        <ImageResponseOverlay
+          top="50px"
+          left="50px"
+          bottom="120px"
+          right="50px"
         >
-          {product.title}
-        </ImageResponsePlaceAtXY>
-        <ImageResponsePlaceAtXY
-          x={55}
-          y={200}
-          style={{ fontSize: 40, color: "white", fontFamily: fontGagalin }}
-        >
-          {product.description}
-        </ImageResponsePlaceAtXY>
+          <ImageResponseColumn gap={20}>
+            <ImageResponseRow gap={20}>
+              <ImageResponseText style={{ fontSize: 90 }}>
+                {product.icon}
+              </ImageResponseText>
+              <ImageResponseText
+                style={{
+                  color: "white",
+                  fontSize: 90,
+                  fontFamily: fontFredoka,
+                }}
+              >
+                {product.title}
+              </ImageResponseText>
+            </ImageResponseRow>
+            <ImageResponseText
+              style={{
+                fontFamily: fontGagalin,
+                color: "white",
+                fontSize: 40,
+              }}
+            >
+              {product.description}
+            </ImageResponseText>
+          </ImageResponseColumn>
+        </ImageResponseOverlay>
       </ImageResponseRoot>
     ),
     {
