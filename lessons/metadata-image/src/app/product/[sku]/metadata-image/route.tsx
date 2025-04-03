@@ -30,34 +30,17 @@ export async function GET(
         <ImageResponseFullBackgroundImg
           src={await localImageToSrc("./public/images/metadata-background.png")}
         />
-        <ImageResponseOverlay
-          top="50px"
-          left="50px"
-          bottom="120px"
-          right="50px"
-        >
+        <ImageResponseOverlay top="50px" left="50px" bottom="120px" right="50px">
           <ImageResponseColumn gap={20}>
             <ImageResponseRow gap={20}>
               <ImageResponseText style={{ fontSize: 90 }}>
                 {product.icon}
               </ImageResponseText>
-              <ImageResponseText
-                style={{
-                  color: "white",
-                  fontSize: 90,
-                  fontFamily: fontFredoka,
-                }}
-              >
+              <ImageResponseText style={{ color: "white", fontSize: 90, fontFamily: fontFredoka }}>
                 {product.title}
               </ImageResponseText>
             </ImageResponseRow>
-            <ImageResponseText
-              style={{
-                fontFamily: fontGagalin,
-                color: "white",
-                fontSize: 40,
-              }}
-            >
+            <ImageResponseText style={{ color: "white", fontSize: 40, fontFamily: fontGagalin }}>
               {product.description}
             </ImageResponseText>
           </ImageResponseColumn>
