@@ -1,0 +1,25 @@
+.root {
+  @apply flex flex-col p-2 gap-4
+}
+
+.icon {
+  @apply text-6xl mb-4;
+}
+
+.title {
+  @apply text-3xl font-bold mb-2;
+}
+
+.description {
+  @apply text-xl font-bold;
+}
+
+.benefits {
+  @apply text-sm/6 text-gray-200;
+}
+
+.link {
+  @apply transition-all duration-300;
+  @apply text-blue-400 hover:text-blue-300;
+  @apply underline underline-offset-4 hover:underline-offset-8;
+}

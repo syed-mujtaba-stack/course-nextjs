@@ -1,0 +1,14 @@
+.root {
+  @apply flex flex-col gap-4;
+}
+
+.title {
+  @apply text-2xl font-bold text-fuchsia-400;
+}
+
+.link {
+  @apply text-lg;
+  @apply transition-all duration-300;
+  @apply text-blue-400 hover:text-blue-300;
+  @apply underline underline-offset-8 hover:underline-offset-4;
+}
