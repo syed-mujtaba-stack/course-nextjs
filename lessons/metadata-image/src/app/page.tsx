@@ -1,4 +1,4 @@
-import { fetchProductList } from "./api/cms";
+import { fetchProductList } from "../lib/cms";
 import styles from "./page.module.css";
 
 export default async function Page() {

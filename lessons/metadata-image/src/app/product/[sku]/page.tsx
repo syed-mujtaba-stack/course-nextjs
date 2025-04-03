@@ -1,4 +1,4 @@
-import { fetchProduct } from "@/app/api/cms";
+import { fetchProduct } from "@/lib/cms";
 import styles from "./page.module.css";
 import Link from "next/link";
 
