@@ -9,11 +9,12 @@ const content: SimpleContentProps = {
 
 export async function generateMetadata(
   _: unknown,
-  parent: ResolvingMetadata
+  parentResolving: ResolvingMetadata
 ): Promise<Metadata> {
-  const { title } = await parent;
+  const parentResolved = await parentResolving;
+  const title = parentResolved.title?.absolute;
   return {
-    title: content.title + " | " + title?.absolute,
+    title: content.title + " | " + title,
   };
 }
 
