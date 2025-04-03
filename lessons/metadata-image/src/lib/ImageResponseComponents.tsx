@@ -89,28 +89,19 @@ export async function localImageToSrc(localPath: string): Promise<string> {
 
 export const ImageResponseOverlay = ({
   children,
-  top,
-  right,
-  bottom,
-  left,
   style,
+  top, right, bottom, left,
 }: React.PropsWithChildren<{
   style?: CSSProperties;
-  top: CSSProperties["top"];
-  right: CSSProperties["right"];
-  bottom: CSSProperties["bottom"];
-  left: CSSProperties["left"];
+  top: CSSProperties["top"]; right: CSSProperties["right"]; bottom: CSSProperties["bottom"]; left: CSSProperties["left"];
 }>) => {
   return (
     <div
       style={{
         display: "flex",
         position: "absolute",
-        top,
-        right,
-        bottom,
-        left,
         ...style,
+        top, right, bottom, left,
       }}
     >
       {children}
@@ -120,19 +111,19 @@ export const ImageResponseOverlay = ({
 
 export const ImageResponseRow = ({
   children,
-  gap,
   style,
+  gap,
 }: React.PropsWithChildren<{
-  gap?: CSSProperties["gap"];
   style?: CSSProperties;
+  gap?: CSSProperties["gap"];
 }>) => {
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "row",
-        gap,
         ...style,
+        gap,
       }}
     >
       {children}
@@ -142,19 +133,19 @@ export const ImageResponseRow = ({
 
 export const ImageResponseColumn = ({
   children,
-  gap,
   style,
+  gap,
 }: React.PropsWithChildren<{
-  gap?: CSSProperties["gap"];
   style?: CSSProperties;
+  gap?: CSSProperties["gap"];
 }>) => {
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        gap,
         ...style,
+        gap,
       }}
     >
       {children}
