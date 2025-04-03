@@ -14,3 +14,12 @@ export const getFontGagalin = async (): Promise<FontOptions> => {
     data: data,
   };
 };
+
+export const fontFredoka = "Fredoka";
+export const getFontFredoka = async (): Promise<FontOptions> => {
+  const data = await fs.readFile(path.resolve("./public/fonts/Fredoka.ttf"));
+  return {
+    name: fontFredoka,
+    data: data,
+  };
+};

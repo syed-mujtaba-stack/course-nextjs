@@ -51,8 +51,34 @@ export const ImageResponseCenteredText = ({
   );
 };
 
+export const ImageResponsePlaceAtXY = ({
+  children,
+  x,
+  y,
+  style,
+}: React.PropsWithChildren<{
+  x: number;
+  y: number;
+  style?: CSSProperties;
+}>) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        position: "absolute",
+        left: x,
+        top: y,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
 import path from "path";
 import { promises as fs } from "fs";
+import { CSSProperties } from 'react';
 export async function localImageToSrc(localPath: string): Promise<string> {
   const imageBuffer = await fs.readFile(path.resolve(localPath));
   const base64ImageSrc = `data:image/png;base64,${imageBuffer.toString(
