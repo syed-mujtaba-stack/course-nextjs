@@ -12,7 +12,6 @@ export async function generateMetadata({
   const { sku } = await params;
   const { title, description } = await fetchProduct(sku);
 
-
   const imageDetails = {
     url: `${BASE_URL}/product/${sku}/metadata-image`,
     width: 1200,
